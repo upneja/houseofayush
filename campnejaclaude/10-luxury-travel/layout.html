@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampNeja</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Karla', sans-serif;
+            background: #FFFEF9;
+            color: #3E3E3E;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 254, 249, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #E8DCC4;
+            z-index: 1000;
+            padding: 2rem 4rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+        }
+
+        nav a {
+            color: #5C4F3D;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #8A9A7B;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(232, 220, 196, 0.3), rgba(232, 220, 196, 0.3)), url('../campnejapics/aerial.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 4rem;
+        }
+
+        .hero h1 {
+            font-family: 'Gilda Display', serif;
+            font-size: 5.5rem;
+            font-weight: 400;
+            color: #5C4F3D;
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
+        }
+
+        .tagline-luxury {
+            font-size: 1.125rem;
+            color: #6B7280;
+            font-style: italic;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .dates-luxury {
+            font-size: 0.95rem;
+            color: #8A9A7B;
+            letter-spacing: 0.2em;
+            margin-bottom: 4rem;
+        }
+
+        .btn-luxury {
+            display: inline-block;
+            padding: 16px 48px;
+            background: transparent;
+            border: 1px solid #8A9A7B;
+            color: #5C4F3D;
+            font-size: 13px;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            transition: all 0.4s ease;
+        }
+
+        .btn-luxury:hover {
+            background: #8A9A7B;
+            color: #FFFEF9;
+        }
+
+        section {
+            padding: 8rem 4rem;
+        }
+
+        .section-ivory {
+            background: #FFFEF9;
+        }
+
+        .section-linen {
+            background: #F5F1E8;
+        }
+
+        .section-beige {
+            background: #E8DCC4;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Gilda Display', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: #5C4F3D;
+            text-align: center;
+            margin-bottom: 4rem;
+            letter-spacing: 0.02em;
+        }
+
+        h3 {
+            font-family: 'Gilda Display', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #5C4F3D;
+            margin-bottom: 1.5rem;
+        }
+
+        .split-luxury {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .luxury-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .card-luxury {
+            background: #FFFEF9;
+            padding: 4rem 3rem;
+            margin-bottom: 2.5rem;
+            border-top: 1px solid #D4C5B0;
+            transition: all 0.3s ease;
+        }
+
+        .card-luxury:hover {
+            background: #FFF;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+
+        .price-luxury {
+            font-family: 'Gilda Display', serif;
+            font-size: 4rem;
+            color: #8A9A7B;
+            display: block;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        footer {
+            background: #5C4F3D;
+            color: #E8DCC4;
+            padding: 4rem;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 0.15em;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            h2 { font-size: 2.5rem; }
+            .split-luxury { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>CampNeja</h1>
+            <p class="tagline-luxury">A weekend where my worlds collide in the woods</p>
+            <p class="dates-luxury">MAY 1 – 3, 2025</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-luxury">RSVP</a>
+        </div>
+    </section>
+
+    <section id="overview" class="section-linen">
+        <div class="container">
+            <div class="split-luxury">
+                <div>
+                    <h2 style="text-align: left; margin-bottom: 2rem;">The Retreat</h2>
+                    <p style="margin-bottom: 2rem;">CampNeja is a full-property takeover of a 100+ acre forest retreat: massive lodge, bonfires, volleyball, pickleball, kayaks, trails, and game rooms — plus a 16-person NYC van full of chaos barreling into Pennsylvania.</p>
+                    <p>It's technically a birthday thing (two weeks after my actual birthday), but not a classic birthday party. It's a crossover weekend for all the different friend groups in my life — low-stress, high-vibes, and guaranteed stories.</p>
+                </div>
+                <img src="../campnejapics/outside1.jpg" alt="Lodge" class="luxury-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="details" class="section-ivory">
+        <div class="container">
+            <h2>Details</h2>
+            <div class="split-luxury" style="gap: 4rem;">
+                <div class="card-luxury">
+                    <h3>Pricing</h3>
+                    <span class="price-luxury">$350</span>
+                    <p style="text-align: center; color: #6B7280;">Includes lodging, meals, drinks, and all activities</p>
+                    <p style="text-align: center; font-size: 0.9rem; margin-top: 1rem; color: #9E9E9E; font-style: italic;">Final price may adjust after accounting</p>
+                </div>
+                <div class="card-luxury">
+                    <h3>Transport</h3>
+                    <p style="margin-top: 2.5rem;"><strong>NYC Van</strong><br>$50 round trip<br>Departs Manhattan at 12 PM Friday<br>16-person capacity</p>
+                    <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #E8DCC4; color: #6B7280;">Nearby airports: Harrisburg (1hr), State College (1hr 20min), Philadelphia (3hrs)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="section-beige">
+        <div class="container">
+            <h2>Schedule</h2>
+            <div class="card-luxury">
+                <h3>Friday</h3>
+                <p>Arrivals throughout the day. Claim your bed (RSVP order priority). Explore the property. Dinner at the pavilion. Bonfire under the stars. Late-night games.</p>
+            </div>
+            <div class="card-luxury">
+                <h3>Saturday</h3>
+                <p>Volleyball, pickleball, kayaks, paddle boats, trails, game room, hammocks, naps, reading, wandering, doing nothing. Big dinner as the sun sets. Night activities.</p>
+            </div>
+            <div class="card-luxury">
+                <h3>Sunday</h3>
+                <p>Slow breakfast. Share stories. Pack leisurely. Return to New York.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section-ivory" style="text-align: center; padding: 10rem 4rem;">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem;">Join Us</h2>
+            <p style="font-style: italic; color: #6B7280; margin-bottom: 4rem; font-size: 1.0625rem;">Beds are assigned by RSVP order</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-luxury" style="padding: 20px 60px; font-size: 14px;">RSVP ON PARTIFUL</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>CAMPNEJA — MAY 1–3, 2025 — PENNSYLVANIA</p>
+    </footer>
+
+</body>
+</html>

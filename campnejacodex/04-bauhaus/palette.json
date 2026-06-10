@@ -1,0 +1,30 @@
+{
+  "name": "Bauhaus Modernist Palette",
+  "colors": [
+    {
+      "name": "Signal Red",
+      "hex": "#e63946",
+      "usage": "primary"
+    },
+    {
+      "name": "Cobalt",
+      "hex": "#1d4ed8",
+      "usage": "accent"
+    },
+    {
+      "name": "Sun Yellow",
+      "hex": "#f5c518",
+      "usage": "highlight"
+    },
+    {
+      "name": "Charcoal",
+      "hex": "#222222",
+      "usage": "text"
+    },
+    {
+      "name": "Bone",
+      "hex": "#f5f3ef",
+      "usage": "background"
+    }
+  ]
+}

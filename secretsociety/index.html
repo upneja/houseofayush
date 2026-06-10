@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>House of Ayush — Secret Society Visual Exploration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --charcoal: #0f0f11;
+      --obsidian: #050506;
+      --stone: #4b4d53;
+      --nocturne: #1a1c27;
+      --gold: #c89a3c;
+      --paper: #b7ac92;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--obsidian);
+      color: #f0f0f2;
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 6rem;
+    }
+    .intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .intro p {
+      max-width: 640px;
+      margin: 0.5rem auto;
+      color: #b6b6c1;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .hero-card {
+      position: relative;
+      height: 320px;
+      padding: 2rem;
+      border: 1px solid rgba(200, 154, 60, 0.15);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .hero-card h3 {
+      margin: 0 0 0.3rem;
+      font-size: 1.3rem;
+    }
+    .hero-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #d2d2d8;
+    }
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .hero-1 {
+      background: radial-gradient(circle at 70% 20%, rgba(200, 154, 60, 0.3), transparent 50%), linear-gradient(135deg, #0b0b0d, var(--obsidian));
+    }
+    .hero-1::after {
+      background: url('data:image/svg+xml,%3Csvg width="200" height="200" xmlns="http://www.w3.org/2000/svg"%3E%3Ccircle cx="100" cy="100" r="70" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/%3E%3C/svg%3E') center/cover;
+      opacity: 0.25;
+    }
+    .hero-2 {
+      background: linear-gradient(125deg, rgba(18, 20, 28, 0.95), rgba(5, 5, 6, 0.95)), repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 4px);
+    }
+    .hero-2::after {
+      background: linear-gradient(45deg, rgba(200, 154, 60, 0.18), transparent);
+    }
+    .hero-3 {
+      background: linear-gradient(90deg, rgba(183, 172, 146, 0.18), rgba(5,5,6,0.8)), url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="160" height="160"%3E%3Cpath d="M0 0h160v160H0z" fill="rgba(5,5,6,0.8)"/%3E%3C/svg%3E');
+    }
+    .hero-3::after {
+      background: repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 3px);
+      mix-blend-mode: screen;
+    }
+    .hero-4 {
+      background: linear-gradient(180deg, rgba(26, 28, 39, 0.95), rgba(5, 5, 6, 0.95));
+    }
+    .hero-4::after {
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0, transparent 60%);
+      mix-blend-mode: soft-light;
+    }
+    .hero-5 {
+      background: radial-gradient(circle at center, rgba(10,10,12,0.4), rgba(5,5,6,0.95)), url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="260" height="260"%3E%3Ccircle cx="130" cy="130" r="120" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/%3E%3C/svg%3E');
+      background-blend-mode: screen;
+    }
+    .crest {
+      margin: 4rem 0;
+      padding: 2.5rem;
+      background: radial-gradient(circle, rgba(200,154,60,0.08), transparent 70%);
+      border: 1px solid rgba(200, 154, 60, 0.2);
+      text-align: center;
+    }
+    .crest svg {
+      width: 200px;
+      height: auto;
+      stroke: var(--gold);
+      fill: none;
+    }
+    .palette {
+      margin: 4rem 0;
+    }
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .swatch {
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .swatch-sample {
+      width: 100%;
+      height: 70px;
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+    }
+    .type-pairings {
+      display: grid;
+      gap: 1.5rem;
+      margin: 4rem 0;
+    }
+    .type-card {
+      padding: 1.5rem;
+      background: linear-gradient(145deg, rgba(10,11,14,0.8), rgba(26,28,39,0.5));
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .type-card h4 {
+      margin: 0 0 0.5rem;
+    }
+    .glyph-board {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 6px);
+    }
+    .glyph {
+      flex: 1 1 120px;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(5, 5, 6, 0.8);
+      position: relative;
+    }
+    .glyph span {
+      font-size: 2rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+    }
+    .textures {
+      margin: 4rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .texture-card {
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #e4e0d2;
+      position: relative;
+      overflow: hidden;
+    }
+    .texture-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.8;
+    }
+    .texture-card h4 {
+      margin: 0;
+      z-index: 1;
+    }
+    .texture-card p {
+      margin: 0.2rem 0 0;
+      font-size: 0.9rem;
+      z-index: 1;
+    }
+    .wax::before {
+      background: radial-gradient(circle, rgba(200,154,60,0.6), rgba(79,38,6,0.6));
+      filter: drop-shadow(0 0 25px rgba(200,154,60,0.4));
+    }
+    .paper::before {
+      background: linear-gradient(135deg, rgba(183,172,146,0.75), rgba(255,255,255,0.1));
+      mix-blend-mode: multiply;
+    }
+    .stone::before {
+      background: linear-gradient(180deg, rgba(41,42,48,0.9), rgba(5,5,6,0.9));
+    }
+    .legend {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      .hero-card {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="intro">
+      <p class="legend">House of Ayush · Modern Secret Society</p>
+      <h1>Visual Identity Exploration</h1>
+      <p>Elite mystique expressed through obsidian planes, restrained occult geometry, and gilded whispers. Each tile below translates strategy into a tangible direction.</p>
+    </header>
+
+    <section>
+      <h2>Hero Section Concepts</h2>
+      <div class="grid">
+        <article class="hero-card hero-1">
+          <h3>Obsidian Atrium</h3>
+          <p>Vaulted arch haloed in gold, crest hovering over a marble plinth with subtle constellation veils.</p>
+        </article>
+        <article class="hero-card hero-2">
+          <h3>Luminous Cipher</h3>
+          <p>Glyph grid etched into stone; a diagonal beam reveals the pledge line with floating particles.</p>
+        </article>
+        <article class="hero-card hero-3">
+          <h3>Vaulted Ledger</h3>
+          <p>Split manifesto between aged paper and matte slate; gold ledger rules and animated seal hover.</p>
+        </article>
+        <article class="hero-card hero-4">
+          <h3>Veil of Echoes</h3>
+          <p>Oversized serif typography layered with translucent veils, portrait partially obscured.</p>
+        </article>
+        <article class="hero-card hero-5">
+          <h3>Silent Court</h3>
+          <p>Top-down stone court with engraved sigils surrounding the glowing HOA monogram.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="crest">
+      <h2>Monogram Crest</h2>
+      <svg viewBox="0 0 200 200" aria-label="House of Ayush crest">
+        <circle cx="100" cy="100" r="80" stroke-width="1" opacity="0.5" />
+        <line x1="60" y1="40" x2="60" y2="160" stroke-width="3" />
+        <line x1="140" y1="40" x2="140" y2="160" stroke-width="3" />
+        <line x1="60" y1="100" x2="140" y2="100" stroke-width="3" />
+        <circle cx="100" cy="100" r="30" stroke-width="3" />
+        <path d="M85 120 L115 120 L100 80 Z" stroke-width="3" />
+      </svg>
+      <p>Interlocking HOA monogram built from architectural strokes; Ø ring intersects crossbar while A emerges from the negative triangle.</p>
+    </section>
+
+    <section class="palette">
+      <h2>Color Palette</h2>
+      <div class="swatches">
+        <div class="swatch">
+          <div class="swatch-sample" style="background:#0f0f11"></div>
+          <strong>Deep Charcoal</strong>
+          <p>#0F0F11</p>
+        </div>
+        <div class="swatch">
+          <div class="swatch-sample" style="background:#050506"></div>
+          <strong>Obsidian Black</strong>
+          <p>#050506</p>
+        </div>
+        <div class="swatch">
+          <div class="swatch-sample" style="background:#4b4d53"></div>
+          <strong>Aged Stone</strong>
+          <p>#4B4D53</p>
+        </div>
+        <div class="swatch">
+          <div class="swatch-sample" style="background:#1a1c27"></div>
+          <strong>Nocturne Blue</strong>
+          <p>#1A1C27</p>
+        </div>
+        <div class="swatch">
+          <div class="swatch-sample" style="background:#c89a3c"></div>
+          <strong>Gilded Ember</strong>
+          <p>#C89A3C</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Typography Pairings</h2>
+      <div class="type-pairings">
+        <article class="type-card">
+          <h4>Serif Display · Cormorant Garamond</h4>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 2rem;">“We who cross the threshold sign in disciplined gold.”</p>
+        </article>
+        <article class="type-card">
+          <h4>Modern Sans · Space Grotesk</h4>
+          <p>Coordinates, invitations, and interface components stay restrained with clean, geometric sans lines.</p>
+        </article>
+        <article class="type-card">
+          <h4>Monospace Accent · Maison Neue Mono (optional)</h4>
+          <p style="font-family: monospace; letter-spacing: 0.2em;">RITUAL KEY · 37°47'36"N 122°24'22"W</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Glyph System</h2>
+      <div class="glyph-board">
+        <div class="glyph">
+          <span>△</span>
+        </div>
+        <div class="glyph">
+          <span>◐</span>
+        </div>
+        <div class="glyph">
+          <span>◆</span>
+        </div>
+        <div class="glyph">
+          <span>⟡</span>
+        </div>
+        <div class="glyph">
+          <span>◴</span>
+        </div>
+      </div>
+      <p class="legend">Use as subtle dividers, background tessellations, or stamped markers.</p>
+    </section>
+
+    <section>
+      <h2>Texture Treatments</h2>
+      <div class="textures">
+        <article class="texture-card wax">
+          <h4>Wax Seal</h4>
+          <p>Embossed crest, glossy ridge highlight, subtle drop shadow to imply pressure.</p>
+        </article>
+        <article class="texture-card paper">
+          <h4>Aged Paper</h4>
+          <p>Cotton paper fibers converted into noise overlay; perfect for manifestos.</p>
+        </article>
+        <article class="texture-card stone">
+          <h4>Stone Engraving</h4>
+          <p>Basalt gradients with light-etched glyph strokes evoke ceremonial tablets.</p>
+        </article>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

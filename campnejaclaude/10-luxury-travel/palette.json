@@ -1,0 +1,28 @@
+{
+  "name": "Luxury Travel",
+  "description": "Aman/Soho House palette with linen textures and quiet elegance",
+  "colors": {
+    "primary": {
+      "sand": "#D4C5B0",
+      "warmBeige": "#E8DCC4",
+      "taupe": "#A89F91",
+      "deepBrown": "#5C4F3D"
+    },
+    "accent": {
+      "sage": "#8A9A7B",
+      "terracotta": "#C77954",
+      "dustyBlue": "#7D9AAA",
+      "charcoal": "#3E3E3E"
+    },
+    "neutrals": {
+      "ivory": "#FFFEF9",
+            "linen": "#F5F1E8",
+            "warmGray": "#C9C5BA",
+            "deepCharcoal": "#2A2A2A"
+    }
+  },
+  "gradients": {
+    "subtle": "linear-gradient(180deg, #FFFEF9 0%, #F5F1E8 100%)",
+    "warm": "linear-gradient(135deg, #E8DCC4 0%, #D4C5B0 100%)"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "High Fashion Editorial Palette",
+  "colors": [
+    {
+      "name": "Soft Black",
+      "hex": "#111111",
+      "usage": "primary"
+    },
+    {
+      "name": "Concrete",
+      "hex": "#e0e0e0",
+      "usage": "background"
+    },
+    {
+      "name": "Ivory",
+      "hex": "#f8f6f2",
+      "usage": "panels"
+    },
+    {
+      "name": "Shadow",
+      "hex": "#4b4b4b",
+      "usage": "lines"
+    },
+    {
+      "name": "Highlight",
+      "hex": "#cfc4b2",
+      "usage": "accent"
+    }
+  ]
+}

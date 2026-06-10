@@ -1,0 +1,30 @@
+{
+  "name": "Luxury Travel Palette",
+  "colors": [
+    {
+      "name": "Linen",
+      "hex": "#f4ede3",
+      "usage": "background"
+    },
+    {
+      "name": "Sable",
+      "hex": "#3a2f2a",
+      "usage": "text"
+    },
+    {
+      "name": "Olive",
+      "hex": "#6b715c",
+      "usage": "accent"
+    },
+    {
+      "name": "Clay",
+      "hex": "#bfa58c",
+      "usage": "secondary"
+    },
+    {
+      "name": "Driftwood",
+      "hex": "#d7cbb9",
+      "usage": "panels"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Fantasy Noble House Palette",
+  "colors": [
+    {
+      "name": "Evergreen",
+      "hex": "#203529",
+      "usage": "primary"
+    },
+    {
+      "name": "Crest Gold",
+      "hex": "#d8b156",
+      "usage": "accents"
+    },
+    {
+      "name": "Banner Burgundy",
+      "hex": "#6b1f2f",
+      "usage": "hero frames"
+    },
+    {
+      "name": "Fog Grey",
+      "hex": "#d7d3c7",
+      "usage": "background"
+    },
+    {
+      "name": "Parchment",
+      "hex": "#f5f1e6",
+      "usage": "body copy"
+    }
+  ]
+}

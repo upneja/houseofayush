@@ -1,0 +1,28 @@
+{
+  "name": "Mystical Forest Cult",
+  "description": "Bioluminescence, runes, fog, and enchanted woods",
+  "colors": {
+    "primary": {
+      "forestBlack": "#0A0E0D",
+      "deepMoss": "#1B2621",
+      "shadowGreen": "#2D4A3E"
+    },
+    "bioluminescent": {
+      "glowGreen": "#39FF14",
+      "mysticTeal": "#00FFB9",
+      "etherealBlue": "#00E5FF",
+      "spiritPurple": "#9D4EDD"
+    },
+    "natural": {
+      "mossGreen": "#4A7C59",
+      "fogGray": "#B8C5C9",
+      "moonWhite": "#E8F1F2",
+      "earthBrown": "#594A3C"
+    }
+  },
+  "gradients": {
+    "biolume": "linear-gradient(135deg, #39FF14 0%, #00FFB9 50%, #00E5FF 100%)",
+    "mystical": "linear-gradient(180deg, #0A0E0D 0%, #1B2621 100%)",
+    "glow": "radial-gradient(circle, rgba(57,255,20,0.3) 0%, transparent 70%)"
+  }
+}

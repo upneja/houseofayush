@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House of Ayush — Noble Branding Study</title>
+    <style>
+      :root {
+        --emerald: #0b3d34;
+        --emerald-light: #165c4d;
+        --obsidian: #05090f;
+        --gold: #c9a240;
+        --gold-soft: #e0c989;
+        --parchment: #f8f3e6;
+        --mist: rgba(248, 243, 230, 0.65);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Cinzel", "Cormorant Garamond", "Palatino", serif;
+        background: var(--parchment);
+        color: var(--obsidian);
+        line-height: 1.6;
+      }
+
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem clamp(1rem, 4vw, 3rem);
+      }
+
+      h1,
+      h2,
+      h3 {
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      h1 {
+        font-size: clamp(2.4rem, 5vw, 4rem);
+      }
+
+      h2 {
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+      }
+
+      h3 {
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+      }
+
+      .subtitle {
+        font-family: "Cormorant Garamond", "Garamond", serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--emerald);
+      }
+
+      section {
+        margin-block: 4rem;
+        position: relative;
+      }
+
+      .ornate-frame {
+        padding: 2rem;
+        border: 1px solid rgba(5, 9, 15, 0.35);
+        border-radius: 0.25rem;
+        position: relative;
+      }
+
+      .ornate-frame::before,
+      .ornate-frame::after {
+        content: "";
+        position: absolute;
+        inset: 0.8rem;
+        border: 1px dashed rgba(201, 162, 64, 0.5);
+        pointer-events: none;
+      }
+
+      .ornate-frame::after {
+        inset: 1.2rem;
+        border-style: solid;
+        border-image: repeating-linear-gradient(
+            90deg,
+            transparent 0 6%,
+            rgba(201, 162, 64, 0.35) 6% 12%
+          )
+          1;
+      }
+
+      .hero {
+        position: relative;
+        padding: 6rem clamp(1.5rem, 5vw, 4rem);
+        border-radius: 1rem;
+        color: var(--parchment);
+        overflow: hidden;
+        margin-bottom: 2rem;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            circle at 20% 20%,
+            rgba(201, 162, 64, 0.4),
+            transparent 55%
+          ),
+          radial-gradient(
+            circle at 80% 5%,
+            rgba(255, 255, 255, 0.08),
+            transparent 30%
+          );
+        opacity: 0.7;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='rgba(248,243,230,0.15)' stroke-width='0.5'%3E%3Cpath d='M0 0L160 160M160 0L0 160'/%3E%3Ccircle cx='80' cy='80' r='70'/%3E%3C/g%3E%3C/svg%3E")
+          repeat;
+        mix-blend-mode: soft-light;
+        opacity: 0.4;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 600px;
+      }
+
+      .hero-forest {
+        background: linear-gradient(135deg, rgba(5, 9, 15, 0.95), rgba(11, 61, 52, 0.95)),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='rgba(248,243,230,0.12)' stroke-width='1'%3E%3Cpath d='M0 400 C150 300 250 500 400 400 L400 0 L0 0 Z'/%3E%3C/g%3E%3C/svg%3E")
+            center/cover;
+      }
+
+      .hero-mountain {
+        background: linear-gradient(120deg, rgba(11, 61, 52, 0.9), rgba(5, 9, 15, 0.95)),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cg fill='none' stroke='rgba(201,162,64,0.12)' stroke-width='1'%3E%3Cpath d='M0 320 L120 180 L180 260 L260 80 L360 320 Z'/%3E%3C/g%3E%3C/svg%3E")
+            center/cover;
+      }
+
+      .hero-banners {
+        position: absolute;
+        top: 1.5rem;
+        right: 2rem;
+        display: flex;
+        gap: 0.75rem;
+        z-index: 2;
+      }
+
+      .banner {
+        width: 1.4rem;
+        height: 6rem;
+        background: var(--gold);
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+        opacity: 0.8;
+        box-shadow: inset 0.2rem 0.2rem 0.4rem rgba(255, 255, 255, 0.2);
+      }
+
+      .banner:nth-child(2) {
+        background: var(--obsidian);
+      }
+
+      .banner:nth-child(3) {
+        background: var(--emerald-light);
+      }
+
+      .hero-sigil {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        width: 150px;
+        height: 150px;
+        background: rgba(5, 9, 15, 0.45);
+        border-radius: 50%;
+        border: 1px solid rgba(248, 243, 230, 0.2);
+        display: grid;
+        place-items: center;
+        z-index: 2;
+      }
+
+      .hero-sigil svg {
+        width: 70%;
+        height: 70%;
+        fill: none;
+        stroke: var(--gold-soft);
+        stroke-width: 1.5;
+      }
+
+      .hero-comps {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .hero-layout {
+        border-radius: 1rem;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, rgba(5, 9, 15, 0.92), rgba(11, 61, 52, 0.92));
+        color: var(--parchment);
+        border: 1px solid rgba(201, 162, 64, 0.35);
+        box-shadow: 0 1.5rem 2.5rem rgba(5, 9, 15, 0.35);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-layout::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='none' stroke='rgba(201,162,64,0.15)' stroke-width='0.75'%3E%3Cpath d='M0 110 H220M110 0 V220'/%3E%3Ccircle cx='110' cy='110' r='90'/%3E%3C/g%3E%3C/svg%3E")
+          repeat;
+        opacity: 0.35;
+        pointer-events: none;
+        mix-blend-mode: soft-light;
+      }
+
+      .hero-layout h4 {
+        margin: 0;
+        font-size: 0.85rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold-soft);
+      }
+
+      .hero-desktop {
+        min-height: 320px;
+      }
+
+      .hero-mobile {
+        min-height: 360px;
+      }
+
+      .hero-ui {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .ui-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+      }
+
+      .ui-nav span {
+        color: rgba(248, 243, 230, 0.8);
+      }
+
+      .ui-nav::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(201, 162, 64, 0.8), transparent);
+        display: block;
+        margin-top: 0.5rem;
+      }
+
+      .ui-headline {
+        font-size: clamp(1.6rem, 3vw, 2.6rem);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .ui-body {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1rem;
+        color: rgba(248, 243, 230, 0.9);
+      }
+
+      .ui-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.8rem;
+        padding: 0.65rem 1.4rem;
+        border: 1px solid var(--gold);
+        border-radius: 999px;
+        color: var(--gold-soft);
+        text-decoration: none;
+        margin-top: auto;
+      }
+
+      .ui-cta::after {
+        content: "➶";
+        font-size: 0.9rem;
+      }
+
+      .hero-mobile .ui-device {
+        border: 1px solid rgba(248, 243, 230, 0.2);
+        border-radius: 1.4rem;
+        padding: 1rem;
+        background: rgba(5, 9, 15, 0.65);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 0.5rem;
+      }
+
+      .ui-banner-stack {
+        display: flex;
+        gap: 0.35rem;
+        justify-content: center;
+      }
+
+      .ui-banner-stack .banner {
+        height: 3rem;
+        width: 0.8rem;
+        opacity: 0.9;
+      }
+
+      .ui-caption {
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(248, 243, 230, 0.7);
+        text-align: center;
+      }
+
+      .crest-grid {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .crest-card {
+        background: rgba(248, 243, 230, 0.8);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        border: 1px solid rgba(5, 9, 15, 0.1);
+        box-shadow: 0 1rem 3rem rgba(5, 9, 15, 0.12);
+        text-align: center;
+      }
+
+      .crest-card svg {
+        width: 120px;
+        height: 120px;
+      }
+
+      .crest-card p {
+        font-size: 0.95rem;
+      }
+
+      .palette {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      .swatch {
+        flex: 1 1 160px;
+        padding: 1.25rem;
+        border-radius: 0.75rem;
+        color: var(--parchment);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        border: 1px solid rgba(5, 9, 15, 0.1);
+      }
+
+      .swatch.light {
+        color: var(--obsidian);
+      }
+
+      .typography-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .type-card {
+        background: rgba(255, 255, 255, 0.7);
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(11, 61, 52, 0.2);
+      }
+
+      .type-headline {
+        font-size: 2rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .type-subtitle {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--emerald);
+      }
+
+      .motifs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .motif-card {
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(5, 9, 15, 0.15);
+        background: rgba(248, 243, 230, 0.9);
+        position: relative;
+      }
+
+      .motif-card::before,
+      .motif-card::after {
+        content: "";
+        position: absolute;
+        inset: 0.75rem;
+        border: 1px solid rgba(201, 162, 64, 0.3);
+        pointer-events: none;
+      }
+
+      .motif-card::after {
+        inset: 1.5rem;
+        border-style: dashed;
+        border-color: rgba(5, 9, 15, 0.1);
+      }
+
+      .motif-sample {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+
+      .motif-line {
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(5, 9, 15, 0.6),
+          transparent
+        );
+      }
+
+      .motif-emblem {
+        width: 48px;
+        height: 48px;
+        border: 1px solid rgba(5, 9, 15, 0.45);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--gold);
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          padding: 4rem 1.25rem;
+        }
+        .hero-banners {
+          display: none;
+        }
+        .hero-sigil {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <section>
+        <div class="ornate-frame">
+          <p class="subtitle">House of Ayush</p>
+          <h1>Modern Nobility for a Mythic Lineage</h1>
+          <p>
+            A regal identity forged where ancient heraldry meets contemporary minimalism.
+            The following system balances emerald forests, obsidian stone, and restrained
+            gold filigree to set the tone for a cinematic dynasty reimagined for 2025.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Hero Concepts</h2>
+        <div class="hero hero-forest">
+          <div class="hero-banners">
+            <span class="banner"></span>
+            <span class="banner"></span>
+            <span class="banner"></span>
+          </div>
+          <div class="hero-content">
+            <h3>Emerald Canopy</h3>
+            <p>
+              Atmospheric forest mists wrap the banner while thin gold typographic strokes
+              announce the house motto: “Roots of honor, crowns of light.” The hero leans on
+              translucent sigils and layered grids to merge medieval symbolism with calm modern grids.
+            </p>
+          </div>
+          <div class="hero-sigil">
+            <svg viewBox="0 0 100 100">
+              <path d="M50 8 L35 30 L65 30 Z" />
+              <path d="M50 30 C40 45 40 65 50 82 C60 65 60 45 50 30 Z" />
+              <circle cx="50" cy="86" r="4" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="hero hero-mountain">
+          <div class="hero-banners">
+            <span class="banner"></span>
+            <span class="banner"></span>
+            <span class="banner"></span>
+          </div>
+          <div class="hero-content">
+            <h3>Obsidian Peaks</h3>
+            <p>
+              Geometric peaks fade into obsidian night while contemporary sans serif accents
+              sit alongside engraved titling. A vertical banner stack cues ceremonial armor,
+              with subtle gold foil overlays catching the light like distant torchfire.
+            </p>
+          </div>
+          <div class="hero-sigil">
+            <svg viewBox="0 0 100 100">
+              <path d="M50 15 L20 70 L80 70 Z" />
+              <path d="M35 55 L50 35 L65 55" />
+              <path d="M50 55 L50 85" />
+            </svg>
+          </div>
+        </div>
+
+        <h3>Responsive Web Compositions</h3>
+        <p>
+          Translating the banners and sigils into responsive hero layouts keeps the cinematic energy while
+          delivering modern usability. Desktop leans wide with floating lore copy; mobile stacks crests and
+          banners into a ceremonial column that still feels minimal.
+        </p>
+        <div class="hero-comps">
+          <div class="hero-layout hero-desktop">
+            <div class="hero-ui">
+              <div class="ui-nav">
+                <span>House of Ayush</span>
+                <span>Lineage / Rituals / Archives</span>
+              </div>
+              <div>
+                <h4>Desktop Ceremony</h4>
+                <div class="ui-headline">Crown the Obsidian Dawn</div>
+                <p class="ui-body">
+                  Emerald light pours over obsidian peaks as the ancestral motto scrolls subtly across the grid.
+                  The hero accommodates CTAs without sacrificing the mythic cadence of banners and sigils.
+                </p>
+              </div>
+              <a class="ui-cta" href="#">Enter the Archives</a>
+            </div>
+          </div>
+          <div class="hero-layout hero-mobile">
+            <div class="hero-ui">
+              <h4>Mobile Veneration</h4>
+              <div class="ui-device">
+                <div class="ui-banner-stack">
+                  <span class="banner"></span>
+                  <span class="banner"></span>
+                  <span class="banner"></span>
+                </div>
+                <div class="ui-caption">Sigil beacon</div>
+                <div class="ui-headline" style="font-size: 1.4rem;">Roots of Honor</div>
+                <p class="ui-body" style="font-size: 0.9rem;">
+                  Condensed typography and mist glyphs stay legible while preserving ritualistic rhythm.
+                </p>
+                <a class="ui-cta" style="margin-top: 0;" href="#">Summon Guide</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Color Alchemy</h2>
+        <p>
+          Deep emeralds and obsidian nightfall form the foundation, punctuated with molten gold foil
+          and parchment whites to keep the palette both ceremonial and contemporary.
+        </p>
+        <div class="palette">
+          <div class="swatch" style="background: var(--emerald);">
+            Deep Emerald<br />#0B3D34
+          </div>
+          <div class="swatch" style="background: var(--obsidian);">
+            Obsidian Night<br />#05090F
+          </div>
+          <div class="swatch light" style="background: var(--gold);">
+            Sunlit Gold<br />#C9A240
+          </div>
+          <div class="swatch light" style="background: var(--parchment);">
+            Parchment Veil<br />#F8F3E6
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>House Crest Variations</h2>
+        <div class="crest-grid">
+          <div class="crest-card">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <linearGradient id="crestA" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#c9a240" />
+                  <stop offset="100%" stop-color="#f8f3e6" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M60 10 L100 35 L100 85 L60 110 L20 85 L20 35 Z"
+                fill="url(#crestA)"
+                stroke="#05090F"
+                stroke-width="2"
+              />
+              <path
+                d="M60 30 C45 50 45 75 60 95 C75 75 75 50 60 30 Z"
+                fill="none"
+                stroke="#0b3d34"
+                stroke-width="2"
+              />
+              <circle cx="60" cy="60" r="8" fill="#0b3d34" />
+            </svg>
+            <h3>The Verdant Core</h3>
+            <p>Hexagonal shield echoing sacred groves for ceremonial stationery and wax seals.</p>
+          </div>
+
+          <div class="crest-card">
+            <svg viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="48" fill="#05090F" stroke="#c9a240" stroke-width="3" />
+              <path
+                d="M60 20 L33 60 L60 100 L87 60 Z"
+                fill="none"
+                stroke="#f8f3e6"
+                stroke-width="2"
+              />
+              <path d="M45 60 H75" stroke="#c9a240" stroke-width="2" />
+              <circle cx="60" cy="60" r="6" fill="#c9a240" />
+            </svg>
+            <h3>Eclipse Sigil</h3>
+            <p>Roundel crest balancing light and shadow for medallions and enamel pins.</p>
+          </div>
+
+          <div class="crest-card">
+            <svg viewBox="0 0 120 120">
+              <path
+                d="M60 15 L95 35 L95 80 C95 93 78 108 60 110 C42 108 25 93 25 80 L25 35 Z"
+                fill="#f8f3e6"
+                stroke="#05090F"
+                stroke-width="2"
+              />
+              <path
+                d="M60 30 L45 55 L60 70 L75 55 Z"
+                fill="#0b3d34"
+                stroke="#05090F"
+                stroke-width="1.5"
+              />
+              <path d="M60 70 L60 100" stroke="#c9a240" stroke-width="2" />
+            </svg>
+            <h3>Beacon Shield</h3>
+            <p>Traditional heater shield simplified for brand marks, merch applications, and UI badges.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Typography Direction</h2>
+        <div class="typography-showcase">
+          <div class="type-card">
+            <div class="type-headline">AYUSH</div>
+            <div class="type-subtitle">House Motto Display</div>
+            <p>
+              Tall titling capitals inspired by fantasy title cards, spaced with modern discipline to
+              avoid kitsch. Use sparingly for hero headlines or engraved names.
+            </p>
+          </div>
+          <div class="type-card">
+            <h3>Chronicles Serif</h3>
+            <p>
+              Secondary serif with gentle contrast keeps body copy legible while nodding to illuminated
+              manuscripts. Works for editorial platforms, lore entries, and packaging.
+            </p>
+          </div>
+          <div class="type-card">
+            <h3 style="font-family: 'Optima', 'Avenir', sans-serif;">Modern Rune Sans</h3>
+            <p>
+              A restrained sans pairing (Optima / Avenir) handles digital UI states, establishing tension
+              between the mythic texture and 2025 minimalism.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Ornamental Motifs</h2>
+        <div class="motifs-grid">
+          <div class="motif-card">
+            <h3>Border Filigree</h3>
+            <p>
+              Double-line frames with intermittent gold ticks add ceremony without overwhelming clean
+              layouts. Use on invitations, UI panels, and chapter intros.
+            </p>
+            <div class="motif-sample">
+              <span class="motif-line"></span>
+              <span class="motif-emblem">HA</span>
+              <span class="motif-line"></span>
+            </div>
+          </div>
+          <div class="motif-card">
+            <h3>Sigil Sequencing</h3>
+            <p>
+              Use stacked banner columns or circlets to direct the eye on vertical screens while maintaining
+              a heraldic cadence.
+            </p>
+            <div class="motif-sample">
+              <span class="banner" style="height: 3.5rem;"></span>
+              <span class="banner" style="height: 4rem;"></span>
+              <span class="banner" style="height: 3rem;"></span>
+            </div>
+          </div>
+          <div class="motif-card">
+            <h3>Mist Glyphs</h3>
+            <p>
+              Light line-art trees, peaks, and compass points float in the background as metallic ghosts,
+              hinting at forest and mountain ancestry.
+            </p>
+            <div class="motif-sample">
+              <svg width="80" height="60">
+                <path
+                  d="M10 50 L20 30 L30 50 M20 30 L20 15 M40 50 L50 20 L60 50 M50 20 L50 8 M70 50 L75 35 L80 50"
+                  fill="none"
+                  stroke="#0b3d34"
+                  stroke-width="1"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

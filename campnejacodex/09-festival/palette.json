@@ -1,0 +1,30 @@
+{
+  "name": "Festival Brand Palette",
+  "colors": [
+    {
+      "name": "Sunset Coral",
+      "hex": "#ff6f61",
+      "usage": "primary"
+    },
+    {
+      "name": "Golden Hour",
+      "hex": "#ffb347",
+      "usage": "gradient"
+    },
+    {
+      "name": "Sky Violet",
+      "hex": "#b388ff",
+      "usage": "accent"
+    },
+    {
+      "name": "Leaf",
+      "hex": "#38b27c",
+      "usage": "secondary"
+    },
+    {
+      "name": "Cloud",
+      "hex": "#fff7ec",
+      "usage": "background"
+    }
+  ]
+}

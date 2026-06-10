@@ -1,0 +1,35 @@
+{
+  "name": "High Fashion Editorial",
+  "description": "Dior/Celine minimalism with B/W editorial sophistication",
+  "colors": {
+    "primary": {
+      "black": "#000000",
+      "charcoalBlack": "#1A1A1A",
+      "deepGray": "#2E2E2E"
+    },
+    "neutrals": {
+      "white": "#FFFFFF",
+      "offWhite": "#FAFAFA",
+      "lightGray": "#F5F5F5",
+      "midGray": "#E0E0E0",
+      "gray": "#9E9E9E",
+      --darkGray": "#616161"
+    },
+    "accent": {
+      "forestGreen": "#1B3B2F",
+      "mutedGold": "#C5B358",
+      "softTan": "#D4C5B0"
+    },
+    "editorial": {
+      "vogue": "#000000",
+      "paper": "#FFFFFF",
+      "ink": "#1A1A1A",
+      "smoke": "#757575"
+    }
+  },
+  "gradients": {
+    "subtle": "linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%)",
+    "dark": "linear-gradient(180deg, #1A1A1A 0%, #000000 100%)",
+    "overlay": "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.4) 100%)"
+  }
+}

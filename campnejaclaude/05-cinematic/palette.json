@@ -1,0 +1,28 @@
+{
+  "name": "Cinematic Universe",
+  "description": "Dune/Bond vibes with dramatic lighting and metallic typography",
+  "colors": {
+    "primary": {
+      "desertSand": "#C9A86A",
+      "duneGold": "#8B7355",
+      "midnightBlue": "#0D1B2A",
+      "spiceOrange": "#E76F51"
+    },
+    "metallic": {
+      "bronze": "#CD7F32",
+      "copper": "#B87333",
+      "gunmetal": "#2C3539",
+      "silver": "#C0C0C0"
+    },
+    "dramatic": {
+      "deepBlack": "#000000",
+      "warmBlack": "#1C1C1E",
+      "shadowGray": "#3A3A3C",
+      "lightBeige": "#F5E6D3"
+    }
+  },
+  "gradients": {
+    "cinematic": "linear-gradient(135deg, #0D1B2A 0%, #1C1C1E 50%, #C9A86A 100%)",
+    "dramatic": "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%)"
+  }
+}

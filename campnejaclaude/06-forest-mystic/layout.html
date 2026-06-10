@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampNeja — Mystical Gathering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #0A0E0D;
+            color: #E8F1F2;
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 13, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(57, 255, 20, 0.3);
+            z-index: 1000;
+            padding: 1.5rem 4rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+        }
+
+        nav a {
+            color: #00FFB9;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-shadow: 0 0 10px rgba(0, 255, 185, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #39FF14;
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.8);
+        }
+
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../campnejapics/aerial.jpg') center/cover;
+            filter: brightness(0.3) saturate(0.5);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 20%, rgba(10, 14, 13, 0.9) 80%);
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(57, 255, 20, 0.15);
+            top: 20%;
+            left: 20%;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: rgba(0, 255, 185, 0.12);
+            bottom: 30%;
+            right: 25%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .mystical-symbol {
+            font-size: 80px;
+            color: #39FF14;
+            text-shadow: 0 0 30px rgba(57, 255, 20, 0.8);
+            margin-bottom: 2rem;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-family: 'Uncial Antiqua', serif;
+            font-size: 6rem;
+            color: #00FFB9;
+            text-transform: uppercase;
+            text-shadow: 0 0 40px rgba(0, 255, 185, 0.6);
+            margin-bottom: 1.5rem;
+        }
+
+        .tagline-mystical {
+            font-size: 1.25rem;
+            color: #B8C5C9;
+            font-style: italic;
+            margin-bottom: 3rem;
+        }
+
+        .dates-mystical {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: #39FF14;
+            text-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+            letter-spacing: 0.2em;
+            margin-bottom: 4rem;
+        }
+
+        .btn-mystical {
+            display: inline-block;
+            padding: 18px 50px;
+            background: rgba(57, 255, 20, 0.1);
+            border: 2px solid #39FF14;
+            color: #39FF14;
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.6);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.3), inset 0 0 30px rgba(57, 255, 20, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-mystical:hover {
+            background: rgba(57, 255, 20, 0.2);
+            box-shadow: 0 0 50px rgba(57, 255, 20, 0.6), inset 0 0 40px rgba(57, 255, 20, 0.2);
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 8rem 4rem;
+            position: relative;
+        }
+
+        .section-dark {
+            background: linear-gradient(180deg, #0A0E0D, #1B2621);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            color: #00FFB9;
+            text-align: center;
+            margin-bottom: 4rem;
+            text-shadow: 0 0 30px rgba(0, 255, 185, 0.4);
+        }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #39FF14;
+            margin-bottom: 1rem;
+        }
+
+        .card-mystical {
+            background: rgba(27, 38, 33, 0.6);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            padding: 3rem 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card-mystical:hover {
+            border-color: rgba(0, 255, 185, 0.6);
+            box-shadow: 0 0 60px rgba(0, 255, 185, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .price-mystical {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            color: #39FF14;
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+            display: block;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .grid-mystical {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        footer {
+            background: #0A0E0D;
+            padding: 4rem;
+            text-align: center;
+            border-top: 1px solid rgba(57, 255, 20, 0.3);
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            color: #00FFB9;
+            letter-spacing: 0.15em;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            h2 { font-size: 2.5rem; }
+            .grid-mystical { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="hero-content">
+            <div class="mystical-symbol">✦</div>
+            <h1>CampNeja</h1>
+            <p class="tagline-mystical">A weekend where my worlds collide in the woods</p>
+            <p class="dates-mystical">MAY 1–3, 2025</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-mystical">Enter the Forest</a>
+        </div>
+    </section>
+
+    <section id="overview" class="section-dark">
+        <div class="container">
+            <h2>The Gathering</h2>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 1.125rem; margin-bottom: 2rem;">CampNeja is a full-property takeover of a 100+ acre forest retreat: massive lodge, bonfires, volleyball, pickleball, kayaks, trails, and game rooms — plus a 16-person NYC van full of chaos barreling into Pennsylvania.</p>
+                <p>It's technically a birthday thing (two weeks after my actual birthday), but not a classic birthday party. It's a crossover weekend for all the different friend groups in my life — low-stress, high-vibes, and guaranteed stories.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="details" style="background: #0A0E0D;">
+        <div class="container">
+            <h2>Essential Details</h2>
+            <div class="grid-mystical">
+                <div class="card-mystical">
+                    <h3>Pricing</h3>
+                    <span class="price-mystical">$350</span>
+                    <p style="text-align: center;">Includes lodging, meals, drinks, and all activities</p>
+                </div>
+                <div class="card-mystical">
+                    <h3>Transport</h3>
+                    <p style="margin-top: 2rem;"><strong>NYC Van: $50</strong><br>Departs 12 PM Friday<br>16-person capacity</p>
+                    <p style="margin-top: 1.5rem;">Nearby airports: Harrisburg (1hr), State College (1hr 20min)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="section-dark">
+        <div class="container">
+            <h2>The Ritual</h2>
+            <div class="card-mystical">
+                <h3>✦ Friday — Arrival</h3>
+                <p>Arrivals. Bed claiming (RSVP order). Exploring. Dinner at pavilion. Bonfire. Games.</p>
+            </div>
+            <div class="card-mystical">
+                <h3>✦ Saturday — Adventure</h3>
+                <p>Volleyball, pickleball, kayaks, trails, hammocks, wandering. Big dinner. Night chaos.</p>
+            </div>
+            <div class="card-mystical">
+                <h3>✦ Sunday — Departure</h3>
+                <p>Slow breakfast. Pack. Return to the world beyond.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" style="background: #0A0E0D; text-align: center; padding: 10rem 4rem;">
+        <div class="container">
+            <div class="mystical-symbol" style="font-size: 60px; margin-bottom: 2rem;">✦</div>
+            <h2>Join the Circle</h2>
+            <p style="font-size: 1.125rem; font-style: italic; color: #B8C5C9; margin-bottom: 4rem;">Beds assigned by RSVP order</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-mystical" style="padding: 24px 70px; font-size: 16px;">RSVP on Partiful</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>CAMPNEJA — MAY 1–3, 2025 — PENNSYLVANIA</p>
+    </footer>
+
+</body>
+</html>

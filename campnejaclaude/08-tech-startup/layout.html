@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampNeja</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0F172A;
+            color: #F1F5F9;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+            z-index: 1000;
+            padding: 1.5rem 4rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: #06B6D4;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #8B5CF6;
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-panel {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+        }
+
+        .panel-1 { width: 400px; height: 400px; top: 10%; right: 10%; transform: rotate(15deg); }
+        .panel-2 { width: 300px; height: 300px; bottom: 15%; left: 15%; transform: rotate(-20deg); }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 7rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #8B5CF6, #3B82F6, #06B6D4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .tagline-tech {
+            font-size: 1.25rem;
+            color: #94A3B8;
+            margin-bottom: 3rem;
+        }
+
+        .dates-tech {
+            font-size: 1rem;
+            color: #06B6D4;
+            letter-spacing: 0.2em;
+            margin-bottom: 4rem;
+        }
+
+        .btn-glass {
+            display: inline-block;
+            padding: 18px 50px;
+            background: rgba(139, 92, 246, 0.1);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(139, 92, 246, 0.5);
+            border-radius: 12px;
+            color: #8B5CF6;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2);
+        }
+
+        .btn-glass:hover {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: #8B5CF6;
+            box-shadow: 0 12px 48px rgba(139, 92, 246, 0.4);
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 6rem 4rem;
+        }
+
+        .section-dark {
+            background: #0F172A;
+        }
+
+        .section-slate {
+            background: #1E293B;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4rem;
+        }
+
+        .card-glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card-glass:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 12px 48px rgba(139, 92, 246, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .card-glass h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            color: #06B6D4;
+            margin-bottom: 1rem;
+        }
+
+        .price-tech {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .grid-tech {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        footer {
+            background: #0F172A;
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            padding: 3rem;
+            text-align: center;
+            color: #64748B;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4rem; }
+            h2 { font-size: 2.5rem; }
+            .grid-tech { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="glass-panel panel-1"></div>
+        <div class="glass-panel panel-2"></div>
+        <div class="hero-content">
+            <h1>CAMPNEJA</h1>
+            <p class="tagline-tech">A weekend where my worlds collide in the woods</p>
+            <p class="dates-tech">MAY 1—3, 2025</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-glass">RSVP Now</a>
+        </div>
+    </section>
+
+    <section id="overview" class="section-dark">
+        <div class="container">
+            <h2>The Experience</h2>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 1.125rem; margin-bottom: 2rem; text-align: center; color: #CBD5E1;">CampNeja is a full-property takeover of a 100+ acre forest retreat: massive lodge, bonfires, volleyball, pickleball, kayaks, trails, and game rooms — plus a 16-person NYC van full of chaos barreling into Pennsylvania.</p>
+                <p style="text-align: center; color: #94A3B8;">It's a crossover weekend for all the different friend groups in my life — low-stress, high-vibes, and guaranteed stories.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="details" class="section-slate">
+        <div class="container">
+            <h2>Details</h2>
+            <div class="grid-tech">
+                <div class="card-glass">
+                    <h3>Pricing</h3>
+                    <span class="price-tech">$350</span>
+                    <p style="text-align: center; color: #CBD5E1;">Includes lodging, meals, drinks, and all activities</p>
+                </div>
+                <div class="card-glass">
+                    <h3>Transport</h3>
+                    <p style="margin-top: 2rem; color: #CBD5E1;"><strong>NYC Van: $50</strong><br>Departs 12 PM Friday<br>16-person capacity</p>
+                    <p style="margin-top: 1.5rem; color: #94A3B8;">Nearby airports: Harrisburg (1hr), State College (1hr 20min)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="section-dark">
+        <div class="container">
+            <h2>Schedule</h2>
+            <div class="card-glass">
+                <h3>Friday</h3>
+                <p style="color: #CBD5E1;">Arrivals. Bed claiming. Exploring. Dinner. Bonfire. Games.</p>
+            </div>
+            <div class="card-glass">
+                <h3>Saturday</h3>
+                <p style="color: #CBD5E1;">Volleyball, pickleball, kayaks, trails, hammocks. Big dinner. Night chaos.</p>
+            </div>
+            <div class="card-glass">
+                <h3>Sunday</h3>
+                <p style="color: #CBD5E1;">Slow breakfast. Pack. Return to NYC.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section-slate" style="text-align: center; padding: 8rem 4rem;">
+        <div class="container">
+            <h2>Join Us</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 4rem; color: #94A3B8;">Beds assigned by RSVP order</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-glass" style="padding: 24px 70px; font-size: 16px;">RSVP on Partiful</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>CAMPNEJA — MAY 1–3, 2025 — PENNSYLVANIA</p>
+    </footer>
+
+</body>
+</html>

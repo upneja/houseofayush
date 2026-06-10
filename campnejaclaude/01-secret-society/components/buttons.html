@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Society - Button Components</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #0A0A0F;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .component-group {
+            background: #161616;
+            padding: 3rem;
+            border: 1px solid #D4AF37;
+            min-width: 600px;
+        }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: #D4AF37;
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Primary Button */
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 48px;
+            background: linear-gradient(135deg, #B8860B, #D4AF37);
+            border: 2px solid #B8860B;
+            color: #0A0A0F;
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, #D4AF37, #EDD9A3);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Secondary Button */
+        .btn-secondary {
+            display: inline-block;
+            padding: 16px 48px;
+            background: transparent;
+            border: 2px solid #D4AF37;
+            color: #D4AF37;
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: #D4AF37;
+            color: #0A0A0F;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Tertiary Button */
+        .btn-tertiary {
+            display: inline-block;
+            padding: 12px 32px;
+            background: transparent;
+            border: 1px solid #6B6866;
+            color: #F4EDE3;
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-tertiary:hover {
+            border-color: #D4AF37;
+            color: #D4AF37;
+        }
+
+        /* Small Button */
+        .btn-small {
+            padding: 10px 24px;
+            font-size: 12px;
+        }
+
+        /* Large Button */
+        .btn-large {
+            padding: 20px 64px;
+            font-size: 16px;
+        }
+
+        /* Icon Button */
+        .btn-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-icon::before {
+            content: '◆';
+            font-size: 12px;
+        }
+
+        /* Disabled State */
+        .btn-disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .state-label {
+            font-family: 'Cinzel', serif;
+            color: #A39F9E;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="component-group">
+        <h3>Primary Buttons</h3>
+        <div class="button-row">
+            <button class="btn-primary">RSVP Now</button>
+            <button class="btn-primary btn-small">Small</button>
+            <button class="btn-primary btn-large">Large CTA</button>
+        </div>
+        <div class="button-row">
+            <button class="btn-primary btn-icon">Join the Gathering</button>
+            <button class="btn-primary btn-disabled">Disabled</button>
+        </div>
+    </div>
+
+    <div class="component-group">
+        <h3>Secondary Buttons</h3>
+        <div class="button-row">
+            <button class="btn-secondary">Learn More</button>
+            <button class="btn-secondary btn-small">Small</button>
+            <button class="btn-secondary btn-large">Large CTA</button>
+        </div>
+        <div class="button-row">
+            <button class="btn-secondary btn-icon">View Details</button>
+            <button class="btn-secondary btn-disabled">Disabled</button>
+        </div>
+    </div>
+
+    <div class="component-group">
+        <h3>Tertiary Buttons</h3>
+        <div class="button-row">
+            <button class="btn-tertiary">Close</button>
+            <button class="btn-tertiary">Cancel</button>
+            <button class="btn-tertiary btn-icon">More Info</button>
+        </div>
+    </div>
+
+    <div class="component-group">
+        <h3>Button States</h3>
+        <div class="button-row">
+            <div style="text-align: center;">
+                <button class="btn-primary">Default</button>
+                <div class="state-label">Default</div>
+            </div>
+            <div style="text-align: center;">
+                <button class="btn-primary" style="transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);">Hover</button>
+                <div class="state-label">Hover</div>
+            </div>
+            <div style="text-align: center;">
+                <button class="btn-primary" style="transform: translateY(0); box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);">Active</button>
+                <div class="state-label">Active</div>
+            </div>
+            <div style="text-align: center;">
+                <button class="btn-primary btn-disabled">Disabled</button>
+                <div class="state-label">Disabled</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

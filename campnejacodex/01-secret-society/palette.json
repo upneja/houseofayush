@@ -1,0 +1,30 @@
+{
+  "name": "Secret Society Palette",
+  "colors": [
+    {
+      "name": "Obsidian",
+      "hex": "#050507",
+      "usage": "primary background"
+    },
+    {
+      "name": "Molten Gold",
+      "hex": "#c89c3d",
+      "usage": "accents and typography"
+    },
+    {
+      "name": "Midnight Plum",
+      "hex": "#2a172e",
+      "usage": "panels"
+    },
+    {
+      "name": "Smoke",
+      "hex": "#7a7a7a",
+      "usage": "secondary text"
+    },
+    {
+      "name": "Ivory",
+      "hex": "#f6f0db",
+      "usage": "contrast text"
+    }
+  ]
+}

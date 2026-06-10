@@ -1,0 +1,25 @@
+{
+  "name": "Bauhaus Modernist",
+  "description": "Geometric shapes with primary colors and clean modernist grids",
+  "colors": {
+    "primary": {
+      "bauhausRed": "#E63946",
+      "primaryBlue": "#1D3557",
+      "sunYellow": "#F1C453"
+    },
+    "secondary": {
+      "black": "#000000",
+      "white": "#FFFFFF",
+      "warmGray": "#E5E5E5"
+    },
+    "accent": {
+      "teal": "#06A77D",
+      "orange": "#F77F00",
+      "purple": "#5E60CE"
+    }
+  },
+  "gradients": {
+    "primary": "linear-gradient(45deg, #E63946 0%, #F77F00 100%)",
+    "modernist": "linear-gradient(135deg, #1D3557 0%, #06A77D 100%)"
+  }
+}

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampNeja — May 1–3, 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --obsidian: #0A0A0F;
+            --deep-black: #161616;
+            --charcoal: #2B2B2B;
+            --ceremonial-gold: #D4AF37;
+            --pale-gold: #EDD9A3;
+            --bronze-gold: #B8860B;
+            --crimson-wax: #8B1E3F;
+            --deep-purple: #3E2A47;
+            --smokey-gray: #4A4A4A;
+            --parchment: #F4EDE3;
+            --stone: #A39F9E;
+            --slate: #6B6866;
+            --ink: #1A1A1A;
+            --candlelight: #FFE4B5;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: var(--obsidian);
+            color: var(--parchment);
+            font-size: 18px;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--ceremonial-gold);
+            z-index: 1000;
+            padding: 1.5rem 4rem;
+        }
+
+        nav .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: var(--ceremonial-gold);
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+            justify-content: flex-end;
+            margin-top: -2rem;
+        }
+
+        nav a {
+            color: var(--parchment);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--ceremonial-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../campnejapics/aerial.jpg') center/cover;
+            filter: brightness(0.3) saturate(0.85);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 20%, var(--obsidian) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .sigil {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            border: 3px solid var(--ceremonial-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: rotate-sigil 20s linear infinite;
+        }
+
+        .sigil svg {
+            width: 80px;
+            height: 80px;
+            fill: none;
+            stroke: var(--ceremonial-gold);
+            stroke-width: 2;
+        }
+
+        @keyframes rotate-sigil {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--ceremonial-gold);
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero .tagline {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--pale-gold);
+            margin-bottom: 1rem;
+        }
+
+        .hero .dates {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            color: var(--ceremonial-gold);
+            margin-bottom: 3rem;
+            letter-spacing: 0.1em;
+        }
+
+        .divider {
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--ceremonial-gold), transparent);
+            margin: 2rem auto;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 48px;
+            background: linear-gradient(135deg, var(--bronze-gold), var(--ceremonial-gold));
+            border: 2px solid var(--bronze-gold);
+            color: var(--obsidian);
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 16px 48px;
+            background: transparent;
+            border: 2px solid var(--ceremonial-gold);
+            color: var(--ceremonial-gold);
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--ceremonial-gold);
+            color: var(--obsidian);
+        }
+
+        /* Sections */
+        section {
+            padding: 8rem 4rem;
+            position: relative;
+        }
+
+        .section-dark {
+            background: var(--deep-black);
+        }
+
+        .section-purple {
+            background: linear-gradient(180deg, var(--deep-black), var(--deep-purple));
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--ceremonial-gold);
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.25rem;
+            font-weight: 500;
+            color: var(--pale-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--ceremonial-gold);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--parchment);
+        }
+
+        /* Overview Section */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .overview-text {
+            padding: 2rem;
+        }
+
+        .overview-image {
+            position: relative;
+            height: 500px;
+            border: 2px solid var(--ceremonial-gold);
+            overflow: hidden;
+        }
+
+        .overview-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) saturate(0.9);
+        }
+
+        /* Details Cards */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .detail-card {
+            background: var(--deep-black);
+            border: 1px solid var(--ceremonial-gold);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.2);
+            border-color: var(--pale-gold);
+        }
+
+        .detail-card h4 {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .detail-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-card li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.75rem;
+        }
+
+        .detail-card li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--ceremonial-gold);
+            font-size: 0.75rem;
+        }
+
+        .price-highlight {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--ceremonial-gold);
+            text-align: center;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        /* Schedule */
+        .schedule-day {
+            background: var(--deep-black);
+            border-left: 4px solid var(--ceremonial-gold);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .schedule-day h4 {
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border: 2px solid var(--ceremonial-gold);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            border-color: var(--pale-gold);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) saturate(0.9);
+            transition: filter 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            filter: brightness(0.5);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, transparent 50%, rgba(10, 10, 15, 0.8) 100%);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--deep-purple), var(--deep-black));
+            text-align: center;
+            padding: 6rem 4rem;
+        }
+
+        .cta-section .sigil {
+            margin-bottom: 2rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--pale-gold);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--obsidian);
+            border-top: 1px solid var(--ceremonial-gold);
+            padding: 3rem 4rem;
+            text-align: center;
+        }
+
+        footer .divider {
+            margin: 2rem auto;
+        }
+
+        footer p {
+            font-size: 0.875rem;
+            color: var(--stone);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 4rem 2rem;
+            }
+
+            .overview-grid,
+            .details-grid,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">CampNeja</div>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="sigil">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" stroke="currentColor" fill="none"/>
+                    <polygon points="50,20 70,70 30,70" stroke="currentColor" fill="none"/>
+                    <line x1="50" y1="20" x2="50" y2="70" stroke="currentColor"/>
+                    <circle cx="50" cy="50" r="15" stroke="currentColor" fill="none"/>
+                </svg>
+            </div>
+            <h1>CAMPNEJA</h1>
+            <p class="tagline">A weekend where my worlds collide in the woods.</p>
+            <div class="divider"></div>
+            <p class="dates">MAY 1–3, 2025</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-primary">RSVP on Partiful</a>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="section-dark">
+        <div class="container">
+            <h2>The Gathering</h2>
+            <div class="overview-grid">
+                <div class="overview-text">
+                    <p>CampNeja is a full-property takeover of a 100+ acre forest retreat: massive lodge, bonfires, volleyball, pickleball, kayaks, trails, and game rooms — plus a 16-person NYC van full of chaos barreling into Pennsylvania.</p>
+                    <p>It's technically a birthday thing (two weeks after my actual birthday), but not a classic birthday party. It's a crossover weekend for all the different friend groups in my life — low-stress, high-vibes, and guaranteed stories.</p>
+                    <p>Join us for three days of forest adventures, late-night conversations, competitive games, and the kind of memories that become legendary.</p>
+                </div>
+                <div class="overview-image">
+                    <img src="../campnejapics/outside1.jpg" alt="Forest retreat lodge">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details -->
+    <section id="details" class="section-purple">
+        <div class="container">
+            <h2>Essential Details</h2>
+            <div class="details-grid">
+                <!-- Pricing -->
+                <div class="detail-card">
+                    <h4>Pricing</h4>
+                    <span class="price-highlight">$350</span>
+                    <p style="text-align: center; font-size: 0.875rem; color: var(--stone);">per person</p>
+                    <div class="divider" style="width: 100px;"></div>
+                    <p style="font-size: 0.95rem;">Includes lodging, Fri dinner, Sat breakfast + dinner, Sun breakfast, snacks, NA drinks, base alcohol, and all activities.</p>
+                    <p style="font-size: 0.875rem; font-style: italic; color: var(--stone);">Final price may adjust slightly after accounting</p>
+                </div>
+
+                <!-- Transport -->
+                <div class="detail-card">
+                    <h4>Transport</h4>
+                    <ul>
+                        <li><strong>NYC Van:</strong> $50 round trip</li>
+                        <li>Departs Manhattan at 12 PM Friday</li>
+                        <li>16-person capacity</li>
+                        <li>Additional van if needed</li>
+                    </ul>
+                    <div class="divider" style="width: 100px; margin: 1.5rem auto;"></div>
+                    <p style="font-size: 0.95rem;"><strong>Nearby Airports:</strong></p>
+                    <ul>
+                        <li>Harrisburg (MDT) – 1 hr</li>
+                        <li>State College (SCE) – 1hr 20min</li>
+                        <li>Philadelphia (PHL) – 3 hrs</li>
+                        <li>Newark (EWR) – 3 hrs</li>
+                    </ul>
+                </div>
+
+                <!-- What to Bring -->
+                <div class="detail-card">
+                    <h4>What to Bring</h4>
+                    <ul>
+                        <li>Forest-ready clothes & shoes</li>
+                        <li>Extra alcohol (if you want specific brands)</li>
+                        <li>Games & entertainment</li>
+                        <li>Swimwear</li>
+                        <li>Jacket for cool evenings</li>
+                        <li>Chaotic fact about yourself</li>
+                        <li>Good vibes (mandatory)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule" class="section-dark">
+        <div class="container">
+            <h2>The Ritual</h2>
+
+            <div class="schedule-day">
+                <h4>Friday — Arrival & Settling</h4>
+                <p>Arrivals throughout the day. Claim your bed (RSVP order priority). Explore the property, get oriented, find your favorite hammock spot. Dinner at the pavilion as the group assembles. Bonfire under the stars. Late-night games for the nocturnal crew.</p>
+            </div>
+
+            <div class="schedule-day">
+                <h4>Saturday — Maximum Chaos</h4>
+                <p>The main event. Volleyball tournaments, pickleball battles, kayak expeditions, paddle boat races, trail exploration, game room domination, hammock philosophy, strategic naps, wandering, doing absolutely nothing if that's your vibe. Big dinner as the sun sets. Night chaos of undetermined nature.</p>
+            </div>
+
+            <div class="schedule-day">
+                <h4>Sunday — Slow Departure</h4>
+                <p>Leisurely breakfast. Share stories from the night before. Pack up slowly. Return to civilization, forever changed.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-style: italic; color: var(--pale-gold); font-size: 1.1rem;">All schedules are suggestions. The forest decides.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section-purple">
+        <div class="container">
+            <h2>The Grounds</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="../campnejapics/deck.jpg" alt="Deck area">
+                </div>
+                <div class="gallery-item">
+                    <img src="../campnejapics/pond.jpg" alt="Pond with diving board">
+                </div>
+                <div class="gallery-item">
+                    <img src="../campnejapics/pavillion.jpg" alt="Timber pavilion">
+                </div>
+                <div class="gallery-item">
+                    <img src="../campnejapics/boats.jpg" alt="Kayaks on the water">
+                </div>
+                <div class="gallery-item">
+                    <img src="../campnejapics/game room.jpg" alt="Indoor game room">
+                </div>
+                <div class="gallery-item">
+                    <img src="../campnejapics/volleyball.jpg" alt="Volleyball court and field">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="rsvp" class="cta-section">
+        <div class="container">
+            <div class="sigil" style="animation: none;">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" stroke="currentColor" fill="none"/>
+                    <polygon points="50,20 70,70 30,70" stroke="currentColor" fill="none"/>
+                    <line x1="50" y1="20" x2="50" y2="70" stroke="currentColor"/>
+                    <circle cx="50" cy="50" r="15" stroke="currentColor" fill="none"/>
+                </svg>
+            </div>
+            <h2>Claim Your Place</h2>
+            <p>Beds are assigned by RSVP order. The ceremony awaits.</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-primary">RSVP on Partiful</a>
+            <div class="divider"></div>
+            <p style="font-size: 0.95rem; margin-top: 2rem;">Questions? Reach out to the organizer via <a href="PARTIFUL_URL_HERE" style="color: var(--ceremonial-gold); text-decoration: underline;">Partiful</a>.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p style="color: var(--ceremonial-gold); font-family: 'Cinzel', serif; letter-spacing: 0.1em;">CAMPNEJA</p>
+        <div class="divider" style="width: 150px;"></div>
+        <p>May 1–3, 2025 · Pennsylvania</p>
+        <p style="margin-top: 1rem; font-size: 0.75rem;">A gathering of worlds in the woods</p>
+    </footer>
+
+</body>
+</html>

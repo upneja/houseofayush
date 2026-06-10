@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMPNEJA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #000;
+            color: #F5E6D3;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.9), transparent);
+            z-index: 1000;
+            padding: 2rem 4rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: #C9A86A;
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.15em;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFF;
+            text-shadow: 0 0 20px rgba(201, 168, 106, 0.6);
+        }
+
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../campnejapics/aerial.jpg') center/cover;
+            filter: brightness(0.4) saturate(0.7) sepia(0.2);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(13,27,42,0.8) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 9rem;
+            letter-spacing: 0.1em;
+            background: linear-gradient(135deg, #C9A86A, #CD7F32, #C9A86A);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 40px rgba(201, 168, 106, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .tagline-cinematic {
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #F5E6D3;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dates-cinematic {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.3em;
+            color: #C9A86A;
+            margin-bottom: 4rem;
+        }
+
+        .btn-cinematic {
+            display: inline-block;
+            padding: 18px 60px;
+            background: linear-gradient(135deg, #8B7355, #C9A86A);
+            color: #000;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 30px rgba(201, 168, 106, 0.3);
+        }
+
+        .btn-cinematic:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(201, 168, 106, 0.5), 0 0 30px rgba(201, 168, 106, 0.3);
+        }
+
+        section {
+            padding: 8rem 4rem;
+            position: relative;
+        }
+
+        .section-dark {
+            background: #0D1B2A;
+        }
+
+        .section-darker {
+            background: #000;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            letter-spacing: 0.1em;
+            color: #C9A86A;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: 'Lora', serif;
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: #C9A86A;
+            margin-bottom: 1.5rem;
+        }
+
+        .split-cinematic {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .cinematic-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            filter: brightness(0.7) saturate(0.8) sepia(0.15);
+            border: 1px solid #C9A86A;
+        }
+
+        .card-cinematic {
+            background: linear-gradient(135deg, #1C1C1E, #0D1B2A);
+            padding: 3rem 2.5rem;
+            border: 1px solid #C9A86A;
+            margin-bottom: 2rem;
+        }
+
+        .card-cinematic h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+            color: #C9A86A;
+            margin-bottom: 1rem;
+        }
+
+        .price-cinematic {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4.5rem;
+            background: linear-gradient(135deg, #C9A86A, #CD7F32);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin: 1.5rem 0;
+        }
+
+        .grid-cinematic {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        footer {
+            background: #000;
+            padding: 4rem;
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.2em;
+            color: #C9A86A;
+            border-top: 1px solid #C9A86A;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4.5rem; }
+            h2 { font-size: 3rem; }
+            .split-cinematic, .grid-cinematic { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#overview">OVERVIEW</a></li>
+            <li><a href="#details">DETAILS</a></li>
+            <li><a href="#schedule">SCHEDULE</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>CAMPNEJA</h1>
+            <p class="tagline-cinematic">A weekend where my worlds collide in the woods</p>
+            <p class="dates-cinematic">MAY 1—3, 2025</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-cinematic">RSVP NOW</a>
+        </div>
+    </section>
+
+    <section id="overview" class="section-dark">
+        <div class="container">
+            <div class="split-cinematic">
+                <div>
+                    <h2>THE GATHERING</h2>
+                    <p style="font-size: 1.125rem; margin-bottom: 2rem;">CampNeja is a full-property takeover of a 100+ acre forest retreat: massive lodge, bonfires, volleyball, pickleball, kayaks, trails, and game rooms — plus a 16-person NYC van full of chaos barreling into Pennsylvania.</p>
+                    <p>It's technically a birthday thing (two weeks after my actual birthday), but not a classic birthday party. It's a crossover weekend for all the different friend groups in my life — low-stress, high-vibes, and guaranteed stories.</p>
+                </div>
+                <img src="../campnejapics/outside1.jpg" alt="Lodge" class="cinematic-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="details" class="section-darker">
+        <div class="container">
+            <h2>ESSENTIAL DETAILS</h2>
+            <div class="grid-cinematic">
+                <div class="card-cinematic">
+                    <h4>PRICING</h4>
+                    <span class="price-cinematic">$350</span>
+                    <p>Includes lodging, meals, drinks, and all on-site activities. Final price may adjust after accounting.</p>
+                </div>
+                <div class="card-cinematic">
+                    <h4>TRANSPORT</h4>
+                    <p style="margin-top: 2rem;"><strong>NYC Van: $50 round trip</strong><br>Departs Manhattan 12 PM Friday<br>16-person capacity</p>
+                    <p style="margin-top: 1.5rem;">Nearby airports: Harrisburg (1hr), State College (1hr 20min), Philadelphia (3hrs)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="section-dark">
+        <div class="container">
+            <h2>THE SCHEDULE</h2>
+            <div class="card-cinematic">
+                <h4>FRIDAY — ARRIVAL</h4>
+                <p>Arrivals. Bed claiming (RSVP order). Exploring. Dinner at pavilion. Bonfire. Games.</p>
+            </div>
+            <div class="card-cinematic">
+                <h4>SATURDAY — ADVENTURE</h4>
+                <p>Volleyball, pickleball, kayaks, paddle boats, trails, game room, hammocks, wandering. Big dinner. Night chaos.</p>
+            </div>
+            <div class="card-cinematic">
+                <h4>SUNDAY — DEPARTURE</h4>
+                <p>Slow breakfast. Pack. Return to NYC.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section-darker" style="text-align: center; padding: 10rem 4rem;">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem;">JOIN THE ADVENTURE</h2>
+            <p style="font-family: 'Lora', serif; font-size: 1.25rem; font-style: italic; margin-bottom: 4rem; color: #F5E6D3;">Beds are assigned by RSVP order</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-cinematic" style="padding: 24px 80px; font-size: 18px;">RSVP ON PARTIFUL</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>CAMPNEJA — MAY 1–3, 2025 — PENNSYLVANIA</p>
+    </footer>
+
+</body>
+</html>

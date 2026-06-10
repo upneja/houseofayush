@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMPNEJA — MAY 1–3, 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/futura-std-4');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #FFFFFF;
+            color: #000000;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #000;
+            z-index: 1000;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-shape {
+            width: 50px;
+            height: 50px;
+            background: #E63946;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFF;
+            font-family: 'Futura Std', sans-serif;
+            font-weight: 900;
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: #FFF;
+            text-decoration: none;
+            font-family: 'Futura Std', sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+        nav a:hover {
+            color: #F1C453;
+        }
+
+        .hero {
+            height: 100vh;
+            background: #1D3557;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .geometric-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.1;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 20px solid #F1C453;
+        }
+
+        .circle-1 { width: 400px; height: 400px; top: -200px; right: -200px; }
+        .circle-2 { width: 300px; height: 300px; bottom: -150px; left: 100px; border-color: #E63946; }
+
+        .square {
+            position: absolute;
+            background: #06A77D;
+        }
+
+        .square-1 { width: 200px; height: 200px; bottom: 100px; right: 200px; }
+
+        .triangle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-bottom: 260px solid #F77F00;
+            top: 50%;
+            left: -100px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #FFF;
+        }
+
+        .hero h1 {
+            font-family: 'Futura Std', sans-serif;
+            font-size: 6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .dates-block {
+            display: inline-block;
+            background: #E63946;
+            color: #FFF;
+            padding: 1rem 3rem;
+            font-family: 'Futura Std', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 3rem;
+        }
+
+        .btn-bauhaus {
+            display: inline-block;
+            padding: 20px 60px;
+            background: #F1C453;
+            color: #000;
+            font-family: 'Futura Std', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            transition: all 0.2s linear;
+        }
+
+        .btn-bauhaus:hover {
+            background: #FFF;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 6rem 4rem;
+        }
+
+        .section-white { background: #FFF; color: #000; }
+        .section-red { background: #E63946; color: #FFF; }
+        .section-yellow { background: #F1C453; color: #000; }
+        .section-blue { background: #1D3557; color: #FFF; }
+        .section-gray { background: #E5E5E5; color: #000; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Futura Std', sans-serif;
+            font-size: 3.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+        }
+
+        h3 {
+            font-family: 'Futura Std', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .card-bauhaus {
+            background: #FFF;
+            padding: 3rem 2rem;
+            border-left: 8px solid #E63946;
+            position: relative;
+        }
+
+        .card-bauhaus::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background: #F1C453;
+        }
+
+        .card-bauhaus h4 {
+            font-family: 'Futura Std', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: #1D3557;
+        }
+
+        .price-bauhaus {
+            font-family: 'Futura Std', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: #E63946;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            align-items: start;
+        }
+
+        .day-label {
+            font-family: 'Futura Std', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #E63946;
+        }
+
+        .gallery-bauhaus {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .gallery-bauhaus img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border: 8px solid #000;
+        }
+
+        footer {
+            background: #000;
+            color: #FFF;
+            padding: 3rem;
+            text-align: center;
+            font-family: 'Futura Std', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            h2 { font-size: 2.5rem; }
+            .grid-3, .schedule-grid, .gallery-bauhaus { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-shape">C</div>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="geometric-bg">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="square square-1"></div>
+            <div class="triangle"></div>
+        </div>
+        <div class="hero-content">
+            <h1>CAMPNEJA</h1>
+            <p class="tagline">A weekend where my worlds collide in the woods</p>
+            <div class="dates-block">MAY 1–3, 2025</div>
+            <br>
+            <a href="PARTIFUL_URL_HERE" class="btn-bauhaus">RSVP NOW</a>
+        </div>
+    </section>
+
+    <section id="overview" class="section-white">
+        <div class="container">
+            <h2>THE WEEKEND</h2>
+            <p style="font-size: 1.25rem; line-height: 1.8; max-width: 900px;">CampNeja is a full-property takeover of a 100+ acre forest retreat: massive lodge, bonfires, volleyball, pickleball, kayaks, trails, and game rooms — plus a 16-person NYC van full of chaos barreling into Pennsylvania. It's a crossover weekend for all the different friend groups in my life — low-stress, high-vibes, and guaranteed stories.</p>
+        </div>
+    </section>
+
+    <section id="details" class="section-gray">
+        <div class="container">
+            <h2>DETAILS</h2>
+            <div class="grid-3">
+                <div class="card-bauhaus">
+                    <h4>Pricing</h4>
+                    <span class="price-bauhaus">$350</span>
+                    <p>Includes lodging, meals, drinks, and all activities.</p>
+                </div>
+                <div class="card-bauhaus" style="border-left-color: #1D3557;">
+                    <h4>Transport</h4>
+                    <p style="margin-top: 2rem;"><strong>NYC Van: $50</strong><br>Departs 12 PM Friday<br>16-person capacity</p>
+                    <p style="margin-top: 1.5rem; font-size: 0.95rem;">Airports: Harrisburg (1hr), State College (1hr 20min)</p>
+                </div>
+                <div class="card-bauhaus" style="border-left-color: #06A77D;">
+                    <h4>Bring</h4>
+                    <p style="margin-top: 2rem;">Forest clothes, extra alcohol, games, swimwear, jacket, good vibes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="section-yellow">
+        <div class="container">
+            <h2>SCHEDULE</h2>
+            <div class="schedule-grid">
+                <div class="day-label">FRI</div>
+                <div><p>Arrivals. Bed claiming. Exploring. Dinner. Bonfire. Games.</p></div>
+            </div>
+            <div class="schedule-grid">
+                <div class="day-label">SAT</div>
+                <div><p>Volleyball, pickleball, kayaks, trails, game room, hammocks, wandering. Big dinner. Night chaos.</p></div>
+            </div>
+            <div class="schedule-grid">
+                <div class="day-label">SUN</div>
+                <div><p>Slow breakfast. Pack. Return to NYC.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-blue">
+        <div class="container">
+            <h2>THE PROPERTY</h2>
+            <div class="gallery-bauhaus">
+                <img src="../campnejapics/aerial.jpg" alt="Aerial">
+                <img src="../campnejapics/pond.jpg" alt="Pond">
+                <img src="../campnejapics/pavillion.jpg" alt="Pavilion">
+                <img src="../campnejapics/deck.jpg" alt="Deck">
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section-red" style="text-align: center; padding: 8rem 4rem;">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem;">JOIN US</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 3rem;">Beds assigned by RSVP order</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-bauhaus" style="background: #FFF; color: #000; padding: 24px 80px; font-size: 16px;">RSVP ON PARTIFUL</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>CAMPNEJA — MAY 1–3, 2025 — PENNSYLVANIA</p>
+    </footer>
+
+</body>
+</html>

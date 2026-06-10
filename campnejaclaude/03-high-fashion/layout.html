@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampNeja</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+            color: #000000;
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 2rem 4rem;
+            border-bottom: 1px solid #000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+        }
+
+        nav a {
+            color: #000;
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            border-bottom: 1px solid #000;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: #000;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../campnejapics/aerial.jpg') center/cover;
+            filter: grayscale(100%) contrast(1.2);
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #FFF;
+        }
+
+        .hero h1 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 7.5rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-bottom: 3rem;
+        }
+
+        .hero .dates {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 4rem;
+        }
+
+        .btn-minimal {
+            display: inline-block;
+            padding: 20px 60px;
+            background: #FFF;
+            color: #000;
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            border: 1px solid #FFF;
+            transition: all 0.3s ease;
+        }
+
+        .btn-minimal:hover {
+            background: #000;
+            color: #FFF;
+        }
+
+        .btn-minimal-inverse {
+            background: #000;
+            color: #FFF;
+            border: 1px solid #000;
+        }
+
+        .btn-minimal-inverse:hover {
+            background: #FFF;
+            color: #000;
+        }
+
+        section {
+            padding: 8rem 4rem;
+        }
+
+        .section-white {
+            background: #FFF;
+            color: #000;
+        }
+
+        .section-black {
+            background: #000;
+            color: #FFF;
+        }
+
+        .section-gray {
+            background: #F5F5F5;
+            color: #000;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 4.5rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.1;
+            margin-bottom: 4rem;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .split-60-40 {
+            grid-template-columns: 60% 40%;
+        }
+
+        .image-block {
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .image-block img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.1);
+        }
+
+        .text-block {
+            padding: 2rem;
+        }
+
+        .text-block p {
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .card-minimal {
+            background: #FFF;
+            padding: 3rem 2rem;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        .card-minimal h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .price-editorial {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 3rem;
+            margin: 1.5rem 0;
+            letter-spacing: -0.01em;
+        }
+
+        .schedule-block {
+            padding: 3rem 0;
+            border-top: 1px solid #E0E0E0;
+        }
+
+        .schedule-block:last-child {
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .schedule-block h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .gallery-editorial {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .gallery-item:first-child {
+            grid-column: span 2;
+            height: 600px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.1);
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.02);
+        }
+
+        .cta-editorial {
+            text-align: center;
+            padding: 10rem 4rem;
+        }
+
+        .cta-editorial h2 {
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background: #000;
+            color: #FFF;
+            padding: 4rem;
+            text-align: center;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4rem; }
+            h2 { font-size: 3rem; }
+            .split-layout, .split-60-40, .editorial-grid, .gallery-editorial {
+                grid-template-columns: 1fr;
+            }
+            .gallery-item:first-child {
+                grid-column: span 1;
+            }
+            section { padding: 4rem 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>CAMPNEJA</h1>
+            <p class="tagline">A weekend where my worlds collide in the woods</p>
+            <p class="dates">May 1—3, 2025</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-minimal">RSVP</a>
+        </div>
+    </section>
+
+    <section id="overview" class="section-white">
+        <div class="container">
+            <div class="split-60-40">
+                <div class="text-block">
+                    <h2>The Weekend</h2>
+                    <p>CampNeja is a full-property takeover of a 100+ acre forest retreat: massive lodge, bonfires, volleyball, pickleball, kayaks, trails, and game rooms — plus a 16-person NYC van full of chaos barreling into Pennsylvania.</p>
+                    <p>It's technically a birthday thing (two weeks after my actual birthday), but not a classic birthday party. It's a crossover weekend for all the different friend groups in my life — low-stress, high-vibes, and guaranteed stories.</p>
+                </div>
+                <div class="image-block">
+                    <img src="../campnejapics/outside1.jpg" alt="Retreat">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="details" class="section-gray">
+        <div class="container">
+            <h2 style="text-align: center;">Essential Details</h2>
+            <div class="editorial-grid">
+                <div class="card-minimal">
+                    <h4>Pricing</h4>
+                    <div class="price-editorial">$350</div>
+                    <p style="font-size: 14px; font-weight: 400;">Includes lodging, meals, drinks, and all activities. Final price may adjust after accounting.</p>
+                </div>
+                <div class="card-minimal">
+                    <h4>Transport</h4>
+                    <p style="margin-top: 2rem;"><strong>NYC Van:</strong> $50 round trip<br>Departs 12 PM Friday<br>16-person capacity</p>
+                    <p style="margin-top: 1.5rem; font-size: 14px;">Nearby airports: Harrisburg (1hr), State College (1hr 20min)</p>
+                </div>
+                <div class="card-minimal">
+                    <h4>What to Bring</h4>
+                    <p style="margin-top: 2rem; font-size: 14px; line-height: 2;">Forest-ready clothes<br>Extra alcohol (optional)<br>Games<br>Swimwear<br>Jacket<br>Good vibes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="section-white">
+        <div class="container" style="max-width: 900px;">
+            <h2>Schedule</h2>
+            <div class="schedule-block">
+                <h4>Friday</h4>
+                <p>Arrivals. Bed claiming (RSVP order). Exploring. Dinner at pavilion. Bonfire. Games.</p>
+            </div>
+            <div class="schedule-block">
+                <h4>Saturday</h4>
+                <p>Volleyball, pickleball, kayaks, paddle boats, trails, game room, hammocks, naps, reading, wandering. Big dinner. Night chaos.</p>
+            </div>
+            <div class="schedule-block">
+                <h4>Sunday</h4>
+                <p>Slow breakfast. Pack. Return to NYC.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section-black">
+        <div class="container">
+            <h2 style="color: #FFF;">The Property</h2>
+            <div class="gallery-editorial">
+                <div class="gallery-item"><img src="../campnejapics/aerial.jpg" alt="Aerial view"></div>
+                <div class="gallery-item"><img src="../campnejapics/pond.jpg" alt="Pond"></div>
+                <div class="gallery-item"><img src="../campnejapics/deck.jpg" alt="Deck"></div>
+                <div class="gallery-item"><img src="../campnejapics/pavillion.jpg" alt="Pavilion"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section-white cta-editorial">
+        <div class="container">
+            <h2>Join Us</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 3rem; font-weight: 300;">Beds assigned by RSVP order</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-minimal-inverse" style="padding: 24px 80px; font-size: 12px;">RSVP on Partiful</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>CampNeja — May 1–3, 2025 — Pennsylvania</p>
+    </footer>
+
+</body>
+</html>

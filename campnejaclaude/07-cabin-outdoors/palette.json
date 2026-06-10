@@ -1,0 +1,32 @@
+{
+  "name": "Cabin Outdoor Brand",
+  "description": "REI/Patagonia earth tones, topographic lines, badges",
+  "colors": {
+    "primary": {
+      "forestGreen": "#2F5233",
+      "deepPine": "#1E3A20",
+      "mossGreen": "#4A6741"
+    },
+    "earth": {
+      "terracotta": "#C1666B",
+      "sandstone": "#D4A373",
+      "clay": "#8B5A3C",
+      "stone": "#6B7280"
+    },
+    "neutrals": {
+      "offWhite": "#F5F1E8",
+      "warmGray": "#E5DCC5",
+      "charcoal": "#2C2C2C",
+      "black": "#1A1A1A"
+    },
+    "accent": {
+      "skyBlue": "#6B9AC4",
+      "sunsetOrange": "#E76F51",
+      "trailYellow": "#F4A261"
+    }
+  },
+  "gradients": {
+    "earth": "linear-gradient(135deg, #2F5233 0%, #4A6741 100%)",
+    "sunset": "linear-gradient(180deg, #E76F51 0%, #F4A261 100%)"
+  }
+}

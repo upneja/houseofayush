@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House CampNeja — May 1–3, 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Libre+Baskerville:wght@400;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --royal-navy: #1A2B4A;
+            --deep-forest: #2C4A3E;
+            --heraldgold: #C9A961;
+            --banner-red: #A63446;
+            --parchment: #EDE8DC;
+            --forest-green: #4A6741;
+            --stone-gray: #6B7280;
+            --crown-bronze: #8B6F47;
+        }
+
+        body {
+            font-family: 'Source Serif Pro', serif;
+            background: var(--parchment);
+            color: var(--royal-navy);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--royal-navy);
+            border-bottom: 3px solid var(--heraldgold);
+            z-index: 1000;
+            padding: 1rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .crest-logo {
+            width: 50px;
+            height: 60px;
+            border: 2px solid var(--heraldgold);
+            clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%);
+            background: linear-gradient(135deg, var(--deep-forest), var(--forest-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--heraldgold);
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 900;
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: var(--parchment);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--heraldgold);
+        }
+
+        nav a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--heraldgold);
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--royal-navy), var(--deep-forest));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../campnejapics/aerial.jpg') center/cover;
+            opacity: 0.2;
+            filter: sepia(30%);
+        }
+
+        .hero-crest {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .shield {
+            width: 200px;
+            height: 240px;
+            margin: 0 auto 2rem;
+            clip-path: polygon(50% 0%, 100% 20%, 100% 70%, 50% 100%, 0% 70%, 0% 20%);
+            background: linear-gradient(135deg, var(--deep-forest), var(--forest-green));
+            border: 4px solid var(--heraldgold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .shield-icon {
+            font-size: 80px;
+            color: var(--heraldgold);
+        }
+
+        .crown {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 60px;
+            color: var(--heraldgold);
+            text-shadow: 0 4px 20px rgba(201, 169, 97, 0.5);
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 5.25rem;
+            font-weight: 900;
+            color: var(--heraldgold);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.05em;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: var(--parchment);
+            font-style: italic;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .banner-ribbon {
+            background: var(--banner-red);
+            color: var(--parchment);
+            padding: 0.75rem 3rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .banner-ribbon::before,
+        .banner-ribbon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .banner-ribbon::before {
+            left: -20px;
+            border-width: 22px 20px 22px 0;
+            border-color: transparent var(--banner-red) transparent transparent;
+        }
+
+        .banner-ribbon::after {
+            right: -20px;
+            border-width: 22px 0 22px 20px;
+            border-color: transparent transparent transparent var(--banner-red);
+        }
+
+        .btn-royal {
+            display: inline-block;
+            padding: 18px 48px;
+            background: linear-gradient(135deg, var(--crown-bronze), var(--heraldgold));
+            border: 3px double var(--crown-bronze);
+            color: var(--royal-navy);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-royal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(201, 169, 97, 0.4);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 4rem;
+        }
+
+        .section-navy {
+            background: var(--royal-navy);
+            color: var(--parchment);
+        }
+
+        .section-parchment {
+            background: var(--parchment);
+            color: var(--royal-navy);
+        }
+
+        .section-forest {
+            background: linear-gradient(180deg, var(--deep-forest), var(--forest-green));
+            color: var(--parchment);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .banner-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .banner-header h2 {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--heraldgold);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .ornament-divider {
+            text-align: center;
+            color: var(--heraldgold);
+            font-size: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        /* Shield Cards */
+        .shield-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .shield-card {
+            background: var(--parchment);
+            border: 3px solid var(--heraldgold);
+            padding: 2.5rem;
+            position: relative;
+            color: var(--royal-navy);
+        }
+
+        .shield-card::before {
+            content: '◆';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--royal-navy);
+            color: var(--heraldgold);
+            font-size: 24px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .shield-card h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.75rem;
+            color: var(--banner-red);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .shield-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .price-royal {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--heraldgold);
+            text-align: center;
+            display: block;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Schedule Banners */
+        .schedule-banner {
+            background: var(--banner-red);
+            color: var(--parchment);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 6px solid var(--heraldgold);
+            position: relative;
+        }
+
+        .schedule-banner h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.75rem;
+            color: var(--heraldgold);
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .gallery-frame {
+            position: relative;
+            height: 300px;
+            border: 6px double var(--heraldgold);
+            overflow: hidden;
+            background: var(--royal-navy);
+        }
+
+        .gallery-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(20%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-frame:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--royal-navy);
+            color: var(--parchment);
+            padding: 4rem;
+            text-align: center;
+            border-top: 4px solid var(--heraldgold);
+        }
+
+        .motto {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            color: var(--heraldgold);
+            font-size: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .shield-grid, .gallery-grid { grid-template-columns: 1fr; }
+            section { padding: 3rem 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="crest-logo">C</div>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="AIRBNB_URL_HERE" target="_blank">Airbnb</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-crest">
+            <div class="crown">♔</div>
+            <div class="shield">
+                <span class="shield-icon">🌲</span>
+            </div>
+            <h1>CAMPNEJA</h1>
+            <p class="tagline">A weekend where my worlds collide in the woods.</p>
+            <div class="banner-ribbon">MAY 1–3, 2025</div>
+            <a href="PARTIFUL_URL_HERE" class="btn-royal">RSVP to the Gathering</a>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="section-parchment">
+        <div class="container">
+            <div class="banner-header">
+                <h2>The Royal Gathering</h2>
+                <div class="ornament-divider">═══ ◆ ═══</div>
+            </div>
+            <p style="font-size: 1.25rem; text-align: center; max-width: 900px; margin: 0 auto 3rem;">CampNeja is a full-property takeover of a 100+ acre forest retreat: massive lodge, bonfires, volleyball, pickleball, kayaks, trails, and game rooms — plus a 16-person NYC van full of chaos barreling into Pennsylvania.</p>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto;">It's technically a birthday thing (two weeks after my actual birthday), but not a classic birthday party. It's a crossover weekend for all the different friend groups in my life — low-stress, high-vibes, and guaranteed stories.</p>
+        </div>
+    </section>
+
+    <!-- Details -->
+    <section id="details" class="section-navy">
+        <div class="container">
+            <div class="banner-header">
+                <h2>Essential Details</h2>
+                <div class="ornament-divider">═══ ◆ ═══</div>
+            </div>
+            <div class="shield-grid">
+                <div class="shield-card">
+                    <h4>Pricing</h4>
+                    <span class="price-royal">$350</span>
+                    <p style="text-align: center; font-size: 0.9rem; color: var(--stone-gray); margin-bottom: 1rem;">per person</p>
+                    <div class="ornament-divider" style="font-size: 1rem; margin: 1.5rem 0;">◆</div>
+                    <p>Includes lodging, Friday dinner, Saturday breakfast and dinner, Sunday breakfast, snacks, non-alcoholic drinks, base alcohol, and all on-site activities.</p>
+                </div>
+
+                <div class="shield-card">
+                    <h4>Transport</h4>
+                    <p><strong>NYC Van:</strong> $50 round trip<br>
+                    Departs Manhattan at 12 PM Friday<br>
+                    16-person capacity</p>
+                    <div class="ornament-divider" style="font-size: 1rem; margin: 1.5rem 0;">◆</div>
+                    <p><strong>Nearby Airports:</strong><br>
+                    Harrisburg (MDT) – 1 hr<br>
+                    State College (SCE) – 1hr 20min<br>
+                    Philadelphia (PHL) – 3 hrs<br>
+                    Newark (EWR) – 3 hrs</p>
+                </div>
+
+                <div class="shield-card">
+                    <h4>What to Bring</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;">⚔ Forest-ready attire</li>
+                        <li style="margin-bottom: 0.5rem;">⚔ Extra provisions</li>
+                        <li style="margin-bottom: 0.5rem;">⚔ Games & entertainment</li>
+                        <li style="margin-bottom: 0.5rem;">⚔ Swimwear</li>
+                        <li style="margin-bottom: 0.5rem;">⚔ Warm jacket</li>
+                        <li style="margin-bottom: 0.5rem;">⚔ Chaotic fact</li>
+                        <li style="margin-bottom: 0.5rem;">⚔ Good vibes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule" class="section-parchment">
+        <div class="container">
+            <div class="banner-header">
+                <h2>The Grand Schedule</h2>
+                <div class="ornament-divider">═══ ◆ ═══</div>
+            </div>
+
+            <div class="schedule-banner">
+                <h4>⚔ Friday — Arrival & Settling</h4>
+                <p>Arrivals throughout the day. Claim your bed (RSVP order priority). Explore the realm, find your favorite spot. Dinner at the pavilion as the fellowship assembles. Bonfire beneath the stars. Late-night games for the brave.</p>
+            </div>
+
+            <div class="schedule-banner">
+                <h4>⚔ Saturday — The Grand Adventure</h4>
+                <p>Volleyball tournaments, pickleball duels, kayak expeditions, paddle boat quests, trail exploration, game room conquest, hammock contemplation, strategic rest, wandering, or peaceful solitude. Grand feast at sunset. Night festivities of legendary proportion.</p>
+            </div>
+
+            <div class="schedule-banner">
+                <h4>⚔ Sunday — Noble Departure</h4>
+                <p>Leisurely breakfast feast. Share tales of glory. Gather belongings. Return to the realm beyond, forever changed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section-forest">
+        <div class="container">
+            <div class="banner-header">
+                <h2>The Kingdom</h2>
+                <div class="ornament-divider">═══ ◆ ═══</div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-frame"><img src="../campnejapics/aerial 2.jpg" alt="The Kingdom from Above"></div>
+                <div class="gallery-frame"><img src="../campnejapics/outside1.jpg" alt="The Great Lodge"></div>
+                <div class="gallery-frame"><img src="../campnejapics/deck.jpg" alt="The Council Fire"></div>
+                <div class="gallery-frame"><img src="../campnejapics/pond.jpg" alt="The Royal Waters"></div>
+                <div class="gallery-frame"><img src="../campnejapics/boats.jpg" alt="The Fleet"></div>
+                <div class="gallery-frame"><img src="../campnejapics/pavillion.jpg" alt="The Grand Hall"></div>
+                <div class="gallery-frame"><img src="../campnejapics/volleyball.jpg" alt="The Tournament Grounds"></div>
+                <div class="gallery-frame"><img src="../campnejapics/diving board.jpg" alt="The Diving Platform"></div>
+                <div class="gallery-frame"><img src="../campnejapics/game room.jpg" alt="The War Room"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="rsvp" class="section-navy" style="text-align: center;">
+        <div class="container">
+            <div class="shield" style="margin: 0 auto 2rem; width: 150px; height: 180px;">
+                <span class="shield-icon" style="font-size: 60px;">🌲</span>
+            </div>
+            <h2 style="font-family: 'Cinzel Decorative', serif; font-size: 3rem; color: var(--heraldgold); margin-bottom: 1rem;">Join the Fellowship</h2>
+            <p style="font-size: 1.25rem; color: var(--parchment); margin-bottom: 3rem;">Beds are assigned by RSVP order. Your presence is requested.</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-royal" style="font-size: 1rem; padding: 20px 60px;">RSVP on Partiful</a>
+            <div class="ornament-divider" style="margin: 2.5rem auto; max-width: 150px;">═══ ◆ ═══</div>
+            <p style="font-size: 1rem; color: var(--parchment); margin-bottom: 1.5rem;">Explore the Kingdom</p>
+            <a href="AIRBNB_URL_HERE" target="_blank" class="btn-royal" style="font-size: 0.875rem; padding: 14px 40px; background: transparent; border: 2px solid var(--heraldgold); color: var(--heraldgold);">View on Airbnb</a>
+            <p class="motto" style="margin-top: 2.5rem;">"In Silva, Unitas" — In the Forest, Unity</p>
+        </div>
+    </section>
+
+    <footer>
+        <p style="font-family: 'Cinzel Decorative', serif; font-size: 1.5rem; color: var(--heraldgold); margin-bottom: 1rem;">HOUSE OF NEJA</p>
+        <div class="ornament-divider" style="margin: 1.5rem auto; max-width: 200px;">═══ ◆ ═══</div>
+        <p>May 1–3, 2025 · The Forest Kingdom of Pennsylvania</p>
+    </footer>
+
+</body>
+</html>

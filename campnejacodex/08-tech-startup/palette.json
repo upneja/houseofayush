@@ -1,0 +1,30 @@
+{
+  "name": "Tech Startup Palette",
+  "colors": [
+    {
+      "name": "Deep Space",
+      "hex": "#050b1d",
+      "usage": "primary"
+    },
+    {
+      "name": "Neon Cyan",
+      "hex": "#43ffd7",
+      "usage": "accent"
+    },
+    {
+      "name": "Plasma Violet",
+      "hex": "#7f5af0",
+      "usage": "secondary"
+    },
+    {
+      "name": "Slate",
+      "hex": "#2d2f3a",
+      "usage": "panels"
+    },
+    {
+      "name": "Frost",
+      "hex": "#eef2ff",
+      "usage": "text"
+    }
+  ]
+}

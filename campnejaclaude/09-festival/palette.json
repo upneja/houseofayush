@@ -1,0 +1,29 @@
+{
+  "name": "Festival Brand",
+  "description": "Sunset gradients, stickers, playful typography",
+  "colors": {
+    "primary": {
+      "sunsetPink": "#FF6B9D",
+      "orangeGlow": "#FF8E53",
+      "goldenYellow": "#FFBA5A",
+      "purpleHaze": "#A864E8"
+    },
+    "vibrant": {
+      "electricBlue": "#4F46E5",
+      "neonGreen": "#10B981",
+      "hotPink": "#EC4899",
+      "coral": "#FF6F61"
+    },
+    "neutrals": {
+      "white": "#FFFFFF",
+      "cream": "#FFF9F0",
+      "lightPurple": "#F5F3FF",
+      "charcoal": "#2C2C2C"
+    }
+  },
+  "gradients": {
+    "sunset": "linear-gradient(135deg, #FF6B9D 0%, #FF8E53 50%, #FFBA5A 100%)",
+    "festival": "linear-gradient(135deg, #A864E8 0%, #4F46E5 50%, #10B981 100%)",
+    "vibrant": "linear-gradient(180deg, #FF6B9D 0%, #A864E8 100%)"
+  }
+}

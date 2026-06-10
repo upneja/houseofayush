@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Ayush — Brand Guidelines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --gray: #666666;
+            --gray-light: #cccccc;
+            --white: #fafafa;
+            --accent: #8b7355;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+        }
+
+        .header {
+            text-align: center;
+            padding: 6rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .header-logo {
+            font-family: var(--font-serif);
+            font-size: 0.875rem;
+            letter-spacing: 0.3em;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .header-title {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            margin-bottom: 2rem;
+        }
+
+        .header-subtitle {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            color: var(--gray);
+            text-transform: uppercase;
+        }
+
+        .section {
+            margin: 6rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-number {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--gray);
+            max-width: 600px;
+        }
+
+        /* Logo Showcase */
+        .logo-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .logo-version {
+            padding: 4rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-version.dark {
+            background: var(--charcoal);
+        }
+
+        .logo-display {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo-house {
+            font-family: var(--font-serif);
+            font-size: 0.875rem;
+            letter-spacing: 0.35em;
+            margin-bottom: 1rem;
+        }
+
+        .logo-version.dark .logo-house {
+            color: var(--gray-light);
+        }
+
+        .logo-divider {
+            width: 120px;
+            height: 1px;
+            background: var(--black);
+            margin: 1rem auto;
+        }
+
+        .logo-version.dark .logo-divider {
+            background: var(--white);
+        }
+
+        .logo-ayush {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+        }
+
+        .logo-version.dark .logo-ayush {
+            color: var(--white);
+        }
+
+        .logo-label {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: var(--gray);
+            text-transform: uppercase;
+        }
+
+        .logo-version.dark .logo-label {
+            color: var(--gray-light);
+        }
+
+        /* Color Palette */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .color-swatch {
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .color-display {
+            aspect-ratio: 3/2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+        }
+
+        .color-info {
+            padding: 1.5rem;
+            background: var(--white);
+        }
+
+        .color-name {
+            font-family: var(--font-serif);
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .color-code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        .color-black { background: #0a0a0a; color: var(--white); }
+        .color-charcoal { background: #1a1a1a; color: var(--white); }
+        .color-gray { background: #666666; color: var(--white); }
+        .color-accent { background: #8b7355; color: var(--white); }
+        .color-white { background: #fafafa; color: var(--black); border: 1px solid rgba(0,0,0,0.1); }
+
+        /* Typography */
+        .type-specimen {
+            margin-top: 3rem;
+        }
+
+        .type-family {
+            margin-bottom: 4rem;
+            padding: 3rem;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .type-label {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .type-example {
+            margin-bottom: 2rem;
+        }
+
+        .type-size {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .serif-display { font-family: var(--font-serif); }
+        .sans-display { font-family: var(--font-sans); }
+
+        .example-xl {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            line-height: 1.2;
+        }
+
+        .example-lg {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+
+        .example-md {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+
+        .example-sm {
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+
+        .example-xs {
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* Spacing System */
+        .spacing-grid {
+            margin-top: 3rem;
+        }
+
+        .spacing-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .spacing-visual {
+            height: 40px;
+            background: var(--accent);
+            margin-right: 2rem;
+        }
+
+        .spacing-info {
+            flex: 1;
+        }
+
+        .spacing-name {
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .spacing-value {
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        /* Usage Examples */
+        .usage-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .usage-card {
+            border: 1px solid rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .usage-image {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .usage-info {
+            padding: 2rem;
+        }
+
+        .usage-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .usage-desc {
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .do-dont-card {
+            border: 2px solid;
+            overflow: hidden;
+        }
+
+        .do-card {
+            border-color: #4a7c59;
+        }
+
+        .dont-card {
+            border-color: #c44536;
+        }
+
+        .do-dont-image {
+            aspect-ratio: 1;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+        }
+
+        .do-dont-label {
+            padding: 1rem 2rem;
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        .do-card .do-dont-label {
+            background: #4a7c59;
+        }
+
+        .dont-card .do-dont-label {
+            background: #c44536;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 4rem 0 3rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            margin-top: 6rem;
+        }
+
+        .footer-text {
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-logo">HOUSE OF</div>
+        <h1 class="header-title">AYUSH</h1>
+        <p class="header-subtitle">Brand Guidelines 2025</p>
+    </div>
+
+    <div class="container">
+
+        <!-- Logo Section -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h2 class="section-title">Wordmark</h2>
+                <p class="section-desc">
+                    The House of Ayush wordmark is the cornerstone of our visual identity.
+                    It should always be reproduced from the original artwork and never be recreated.
+                </p>
+            </div>
+
+            <div class="logo-showcase">
+                <div class="logo-version">
+                    <div class="logo-display">
+                        <div class="logo-house">HOUSE OF</div>
+                        <div class="logo-divider"></div>
+                        <div class="logo-ayush">AYUSH</div>
+                    </div>
+                    <div class="logo-label">Primary — Light Background</div>
+                </div>
+
+                <div class="logo-version dark">
+                    <div class="logo-display">
+                        <div class="logo-house">HOUSE OF</div>
+                        <div class="logo-divider"></div>
+                        <div class="logo-ayush">AYUSH</div>
+                    </div>
+                    <div class="logo-label">Secondary — Dark Background</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Color Palette -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h2 class="section-title">Color Palette</h2>
+                <p class="section-desc">
+                    Our monochromatic palette reflects timeless elegance. The accent color
+                    should be used sparingly to highlight key elements and create visual interest.
+                </p>
+            </div>
+
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-display color-black">PRIMARY</div>
+                    <div class="color-info">
+                        <div class="color-name">Black</div>
+                        <div class="color-code">#0a0a0a</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-display color-charcoal">SECONDARY</div>
+                    <div class="color-info">
+                        <div class="color-name">Charcoal</div>
+                        <div class="color-code">#1a1a1a</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-display color-gray">NEUTRAL</div>
+                    <div class="color-info">
+                        <div class="color-name">Gray</div>
+                        <div class="color-code">#666666</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-display color-white">BASE</div>
+                    <div class="color-info">
+                        <div class="color-name">White</div>
+                        <div class="color-code">#fafafa</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-display color-accent">ACCENT</div>
+                    <div class="color-info">
+                        <div class="color-name">Warm Taupe</div>
+                        <div class="color-code">#8b7355</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h2 class="section-title">Typography</h2>
+                <p class="section-desc">
+                    Our type system pairs a refined Didone serif with a modern grotesk sans-serif,
+                    creating a balance between classical elegance and contemporary clarity.
+                </p>
+            </div>
+
+            <div class="type-specimen">
+                <div class="type-family">
+                    <div class="type-label">Primary Typeface — Playfair Display (Didone Serif)</div>
+
+                    <div class="type-example">
+                        <div class="type-size">XL / 64px / Light</div>
+                        <div class="serif-display example-xl">Timeless Elegance</div>
+                    </div>
+
+                    <div class="type-example">
+                        <div class="type-size">Large / 40px / Light</div>
+                        <div class="serif-display example-lg">Premium Craftsmanship</div>
+                    </div>
+
+                    <div class="type-example">
+                        <div class="type-size">Medium / 24px / Regular</div>
+                        <div class="serif-display example-md">The Art of Detail</div>
+                    </div>
+                </div>
+
+                <div class="type-family">
+                    <div class="type-label">Secondary Typeface — Inter (Modern Grotesk)</div>
+
+                    <div class="type-example">
+                        <div class="type-size">Body / 16px / Light</div>
+                        <div class="sans-display example-sm">
+                            Each garment represents our commitment to excellence. From the initial sketch
+                            to the final stitch, we pursue perfection in every detail.
+                        </div>
+                    </div>
+
+                    <div class="type-example">
+                        <div class="type-size">Small / 14px / Regular / Uppercase</div>
+                        <div class="sans-display example-xs">
+                            Spring Collection 2025
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacing -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h2 class="section-title">Spacing System</h2>
+                <p class="section-desc">
+                    Generous spacing creates the breathing room essential to luxury design.
+                    Our spacing scale ensures visual harmony across all touchpoints.
+                </p>
+            </div>
+
+            <div class="spacing-grid">
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 8px;"></div>
+                    <div class="spacing-info">
+                        <div class="spacing-name">XS</div>
+                        <div class="spacing-value">0.5rem / 8px</div>
+                    </div>
+                </div>
+
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 16px;"></div>
+                    <div class="spacing-info">
+                        <div class="spacing-name">Small</div>
+                        <div class="spacing-value">1rem / 16px</div>
+                    </div>
+                </div>
+
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 32px;"></div>
+                    <div class="spacing-info">
+                        <div class="spacing-name">Medium</div>
+                        <div class="spacing-value">2rem / 32px</div>
+                    </div>
+                </div>
+
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 64px;"></div>
+                    <div class="spacing-info">
+                        <div class="spacing-name">Large</div>
+                        <div class="spacing-value">4rem / 64px</div>
+                    </div>
+                </div>
+
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 96px;"></div>
+                    <div class="spacing-info">
+                        <div class="spacing-name">XL</div>
+                        <div class="spacing-value">6rem / 96px</div>
+                    </div>
+                </div>
+
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 160px;"></div>
+                    <div class="spacing-info">
+                        <div class="spacing-name">XXL</div>
+                        <div class="spacing-value">10rem / 160px</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h2 class="section-title">Usage Guidelines</h2>
+                <p class="section-desc">
+                    To maintain brand consistency and visual impact, please follow these guidelines
+                    when implementing the House of Ayush visual identity.
+                </p>
+            </div>
+
+            <div class="do-dont-grid">
+                <div class="do-dont-card do-card">
+                    <div class="do-dont-image">
+                        <div class="logo-display">
+                            <div class="logo-house" style="font-size: 0.75rem;">HOUSE OF</div>
+                            <div class="logo-divider" style="width: 100px;"></div>
+                            <div class="logo-ayush" style="font-size: 2.5rem;">AYUSH</div>
+                        </div>
+                    </div>
+                    <div class="do-dont-label">✓ Do — Maintain proportions</div>
+                </div>
+
+                <div class="do-dont-card dont-card">
+                    <div class="do-dont-image">
+                        <div class="logo-display">
+                            <div class="logo-ayush" style="font-size: 2rem; letter-spacing: 0.5em; font-weight: 600;">AYUSH</div>
+                        </div>
+                    </div>
+                    <div class="do-dont-label">✗ Don't — Alter letter-spacing or weight</div>
+                </div>
+
+                <div class="do-dont-card do-card">
+                    <div class="do-dont-image" style="background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);">
+                        <div class="logo-display">
+                            <div class="logo-ayush" style="font-size: 2.5rem;">AYUSH</div>
+                        </div>
+                    </div>
+                    <div class="do-dont-label">✓ Do — Use on subtle backgrounds</div>
+                </div>
+
+                <div class="do-dont-card dont-card">
+                    <div class="do-dont-image" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);">
+                        <div class="logo-display">
+                            <div class="logo-ayush" style="font-size: 2.5rem; color: white;">AYUSH</div>
+                        </div>
+                    </div>
+                    <div class="do-dont-label">✗ Don't — Use on busy backgrounds</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="footer">
+        <p class="footer-text">House of Ayush Brand Guidelines © 2025</p>
+    </div>
+
+</body>
+</html>

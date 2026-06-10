@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .wordmark {
+        font-family: 'Didot', 'Bodoni MT', 'Playfair Display', serif;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        fill: #000000;
+      }
+      .house {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.25em;
+      }
+      .ayush {
+        font-size: 72px;
+        font-weight: 300;
+        letter-spacing: 0.15em;
+      }
+      .divider {
+        stroke: #000000;
+        stroke-width: 0.5;
+      }
+    </style>
+  </defs>
+
+  <!-- Main wordmark -->
+  <g transform="translate(300, 100)">
+    <!-- HOUSE -->
+    <text class="wordmark house" text-anchor="middle" x="0" y="-30">HOUSE OF</text>
+
+    <!-- Divider line -->
+    <line class="divider" x1="-120" y1="-15" x2="120" y2="-15"/>
+
+    <!-- AYUSH -->
+    <text class="wordmark ayush" text-anchor="middle" x="0" y="50">AYUSH</text>
+
+    <!-- Small accent mark -->
+    <circle cx="0" cy="70" r="1.5" fill="#000000"/>
+  </g>
+</svg>

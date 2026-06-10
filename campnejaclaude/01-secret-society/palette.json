@@ -1,0 +1,37 @@
+{
+  "name": "Secret Society",
+  "description": "Obsidian/gold ceremonial palette with occult-lite mysticism",
+  "colors": {
+    "primary": {
+      "obsidian": "#0A0A0F",
+      "deepBlack": "#161616",
+      "charcoal": "#2B2B2B"
+    },
+    "accent": {
+      "ceremonialGold": "#D4AF37",
+      "paleGold": "#EDD9A3",
+      "bronzeGold": "#B8860B"
+    },
+    "secondary": {
+      "crimsonWax": "#8B1E3F",
+      "deepPurple": "#3E2A47",
+      "smokeyGray": "#4A4A4A"
+    },
+    "neutrals": {
+      "parchment": "#F4EDE3",
+      "stone": "#A39F9E",
+      "slate": "#6B6866",
+      "ink": "#1A1A1A"
+    },
+    "highlights": {
+      "candlelight": "#FFE4B5",
+      "moonlight": "#E8E8E8",
+      "emberGlow": "#FF6347"
+    }
+  },
+  "gradients": {
+    "primary": "linear-gradient(135deg, #0A0A0F 0%, #2B2B2B 100%)",
+    "accent": "linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #EDD9A3 100%)",
+    "ceremonial": "linear-gradient(180deg, #161616 0%, #3E2A47 100%)"
+  }
+}

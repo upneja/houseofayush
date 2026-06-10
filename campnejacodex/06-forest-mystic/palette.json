@@ -1,0 +1,30 @@
+{
+  "name": "Mystical Forest Cult Palette",
+  "colors": [
+    {
+      "name": "Nightshade",
+      "hex": "#050c0a",
+      "usage": "primary"
+    },
+    {
+      "name": "Luminous Teal",
+      "hex": "#4ee1c1",
+      "usage": "accent"
+    },
+    {
+      "name": "Violet Fog",
+      "hex": "#5f2a7f",
+      "usage": "secondary"
+    },
+    {
+      "name": "Moss",
+      "hex": "#3a5b3a",
+      "usage": "support"
+    },
+    {
+      "name": "Star Glow",
+      "hex": "#f5f7da",
+      "usage": "text"
+    }
+  ]
+}

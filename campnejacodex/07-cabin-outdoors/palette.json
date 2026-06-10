@@ -1,0 +1,30 @@
+{
+  "name": "Cabin Outdoor Brand Palette",
+  "colors": [
+    {
+      "name": "Pine",
+      "hex": "#1f3324",
+      "usage": "primary"
+    },
+    {
+      "name": "Ember",
+      "hex": "#c76a3a",
+      "usage": "accent"
+    },
+    {
+      "name": "Lichen",
+      "hex": "#9fa87a",
+      "usage": "secondary"
+    },
+    {
+      "name": "Stone",
+      "hex": "#4c4a44",
+      "usage": "text"
+    },
+    {
+      "name": "Canvas",
+      "hex": "#f1ede3",
+      "usage": "background"
+    }
+  ]
+}

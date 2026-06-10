@@ -1,0 +1,30 @@
+{
+  "name": "Cinematic Universe Palette",
+  "colors": [
+    {
+      "name": "Graphite",
+      "hex": "#0c0f14",
+      "usage": "primary"
+    },
+    {
+      "name": "Burnished Copper",
+      "hex": "#b87333",
+      "usage": "accent"
+    },
+    {
+      "name": "Steel",
+      "hex": "#5c677d",
+      "usage": "secondary"
+    },
+    {
+      "name": "Desert Sand",
+      "hex": "#d1b28a",
+      "usage": "highlight"
+    },
+    {
+      "name": "Mist",
+      "hex": "#f2f2f0",
+      "usage": "copy"
+    }
+  ]
+}

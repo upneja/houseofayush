@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampNeja Outdoor Adventure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #F5F1E8;
+            color: #2C2C2C;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #2F5233;
+            z-index: 1000;
+            padding: 1rem 4rem;
+            border-bottom: 4px solid #E76F51;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: #F5F1E8;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #F4A261;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(31, 58, 32, 0.6), rgba(31, 58, 32, 0.6)), url('../campnejapics/aerial.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #FFF;
+            position: relative;
+        }
+
+        .badge-logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 2rem;
+            border: 4px solid #F4A261;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(47, 82, 51, 0.9);
+        }
+
+        .badge-logo svg {
+            width: 80px;
+            height: 80px;
+            fill: #F4A261;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 5.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero .dates {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.25rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 3rem;
+            color: #F4A261;
+        }
+
+        .btn-outdoor {
+            display: inline-block;
+            padding: 16px 48px;
+            background: #E76F51;
+            color: #FFF;
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border: 3px solid #FFF;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outdoor:hover {
+            background: #F4A261;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231, 111, 81, 0.4);
+        }
+
+        section {
+            padding: 6rem 4rem;
+        }
+
+        .section-cream {
+            background: #F5F1E8;
+        }
+
+        .section-green {
+            background: #2F5233;
+            color: #F5F1E8;
+        }
+
+        .section-gray {
+            background: #E5DCC5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            color: #2F5233;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+
+        .section-green h2 {
+            color: #F4A261;
+        }
+
+        .grid-outdoor {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .card-outdoor {
+            background: #FFF;
+            padding: 2.5rem;
+            border: 3px solid #2F5233;
+            border-top: 8px solid #E76F51;
+        }
+
+        .card-outdoor h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.75rem;
+            text-transform: uppercase;
+            color: #2F5233;
+            margin-bottom: 1rem;
+        }
+
+        .price-outdoor {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: #E76F51;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        .trail-marker {
+            width: 60px;
+            height: 60px;
+            background: #E76F51;
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .schedule-outdoor {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-left: 6px solid #F4A261;
+            margin-bottom: 2rem;
+        }
+
+        .schedule-outdoor h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: #F4A261;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #1E3A20;
+            color: #F5F1E8;
+            padding: 3rem;
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            h2 { font-size: 2.5rem; }
+            .grid-outdoor { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <div class="badge-logo">
+                <span style="font-family: 'Oswald', sans-serif; font-size: 3rem; font-weight: 700;">CN</span>
+            </div>
+            <h1>CAMPNEJA</h1>
+            <p class="tagline">A weekend where my worlds collide in the woods</p>
+            <p class="dates">MAY 1–3, 2025</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-outdoor">RSVP for Adventure</a>
+        </div>
+    </section>
+
+    <section id="overview" class="section-cream">
+        <div class="container">
+            <h2>The Adventure</h2>
+            <p style="font-size: 1.125rem; max-width: 900px; margin: 0 auto 2rem; text-align: center;">CampNeja is a full-property takeover of a 100+ acre forest retreat: massive lodge, bonfires, volleyball, pickleball, kayaks, trails, and game rooms — plus a 16-person NYC van full of chaos barreling into Pennsylvania.</p>
+            <p style="max-width: 800px; margin: 0 auto; text-align: center;">It's a crossover weekend for all the different friend groups in my life — low-stress, high-vibes, and guaranteed stories.</p>
+        </div>
+    </section>
+
+    <section id="details" class="section-gray">
+        <div class="container">
+            <h2>Trail Details</h2>
+            <div class="grid-outdoor">
+                <div class="card-outdoor">
+                    <div class="trail-marker">$</div>
+                    <h3>Pricing</h3>
+                    <span class="price-outdoor">$350</span>
+                    <p>Includes lodging, meals, drinks, and all activities</p>
+                </div>
+                <div class="card-outdoor">
+                    <div class="trail-marker">→</div>
+                    <h3>Transport</h3>
+                    <p style="margin-top: 2rem;"><strong>NYC Van: $50</strong><br>Departs 12 PM Friday<br>16-person capacity</p>
+                </div>
+                <div class="card-outdoor">
+                    <div class="trail-marker">⊕</div>
+                    <h3>Pack List</h3>
+                    <p style="margin-top: 2rem;">Forest clothes, extra drinks, games, swimwear, jacket, good vibes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="section-green">
+        <div class="container">
+            <h2>The Itinerary</h2>
+            <div class="schedule-outdoor">
+                <h3>⬤ Friday — Base Camp</h3>
+                <p>Arrivals. Bed claiming. Exploring. Dinner. Bonfire. Games.</p>
+            </div>
+            <div class="schedule-outdoor">
+                <h3>⬤ Saturday — Summit Day</h3>
+                <p>Volleyball, pickleball, kayaks, trails, hammocks, wandering. Big dinner. Night chaos.</p>
+            </div>
+            <div class="schedule-outdoor">
+                <h3>⬤ Sunday — Trail Out</h3>
+                <p>Slow breakfast. Pack. Return to civilization.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section-cream" style="text-align: center; padding: 8rem 4rem;">
+        <div class="container">
+            <div class="badge-logo" style="margin: 0 auto 2rem;">
+                <span style="font-family: 'Oswald', sans-serif; font-size: 3rem; font-weight: 700;">CN</span>
+            </div>
+            <h2>Join the Expedition</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 3rem;">Beds assigned by RSVP order</p>
+            <a href="PARTIFUL_URL_HERE" class="btn-outdoor" style="padding: 20px 60px; font-size: 16px;">RSVP on Partiful</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>CampNeja — May 1–3, 2025 — Pennsylvania Wilderness</p>
+    </footer>
+
+</body>
+</html>

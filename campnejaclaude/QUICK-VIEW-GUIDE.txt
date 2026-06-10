@@ -1,0 +1,60 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         CAMPNEJA - QUICK VIEW GUIDE                          ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+✅ ALL PHOTOS ARE NOW LIVE! Open any layout.html to see them.
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ TO VIEW A DESIGN:                                                            │
+│ Simply open the layout.html file in any browser                             │
+│                                                                              │
+│ Examples:                                                                    │
+│   • Double-click: 01-secret-society/layout.html                             │
+│   • Or command line: open 01-secret-society/layout.html                     │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ DESIGN SUMMARY                                                               │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  01 • SECRET SOCIETY          → Dark/gold, ceremonial, mysterious            │
+│  02 • FANTASY NOBLE HOUSE     → Medieval crests, royal banners              │
+│  03 • HIGH FASHION EDITORIAL  → B/W minimalism, Vogue aesthetic             │
+│  04 • BAUHAUS MODERNIST       → Geometric shapes, primary colors            │
+│  05 • CINEMATIC UNIVERSE      → Dune/Bond, dramatic metallic                │
+│  06 • MYSTICAL FOREST CULT    → Glowing bioluminescence, dark magic         │
+│  07 • CABIN OUTDOOR BRAND     → REI/Patagonia earth tones                   │
+│  08 • TECH STARTUP            → Glassmorphism, neon, futuristic             │
+│  09 • FESTIVAL BRAND          → Sunset gradients, playful stickers          │
+│  10 • LUXURY TRAVEL           → Aman/Soho House quiet elegance              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ PHOTOS USED (all from campnejapics/)                                         │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  📸 aerial.jpg          - Used in most hero sections                        │
+│  📸 outside1.jpg        - Main lodge/exterior shots                         │
+│  📸 pond.jpg            - Water views                                        │
+│  📸 boats.jpg           - Kayak/paddle boats                                 │
+│  📸 pavillion.jpg       - Dining pavilion                                    │
+│  📸 deck.jpg            - Outdoor deck area                                  │
+│  📸 volleyball.jpg      - Sports/activity area                               │
+│  📸 game room.jpg       - Indoor activities                                  │
+│  📸 playground.jpg      - Play structures                                    │
+│  📸 diving board.jpg    - Pond diving board                                  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ ALL PATHS VERIFIED ✓                                                         │
+│                                                                              │
+│  • All images correctly point to: ../campnejapics/[filename].jpg            │
+│  • No broken image links                                                     │
+│  • All designs are fully functional                                          │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+NEXT STEP: Open layout.html files to view your designs! 🎉
+
